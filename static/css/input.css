@@ -1,1 +1,41 @@
 @import "tailwindcss";
+
+@font-face {
+    font-family: "IRANSansX";
+    src: url("/static/font/IRANSansXFaNum-RegularD4.ttf")
+         format("truetype");
+
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    /* Background */
+    --color-background: #01040E;
+
+    /* Surfaces / Cards */
+    --color-surface: #0D111C;
+    --color-surface-light: #0F131F;
+
+    /* Border */
+    --color-border: #1E293B;
+
+    /* Text */
+    --color-text: #F8FAFC;
+    --color-muted: #94A3B8;
+
+    /* Primary */
+    --color-primary: #8B5CF6;
+    --color-primary-light: #A855F7;
+
+    /* Blue */
+    --color-blue: #2563EB;
+
+    /* Cyan */
+    --color-cyan: #06B6D4;
+
+    /* Pink */
+    --color-pink: #EC4899;
+    --font-sans: "IRANSansX", sans-serif;
+}

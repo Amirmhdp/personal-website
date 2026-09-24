@@ -1,0 +1,21 @@
+{% load render_partial %}
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'shared/header_references.html' %}
+    {% block header_references %}{% endblock header_references %}
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body class="font-sans bg-background">
+    {% render_partial 'home_module.views.header_partial' %}
+
+    {% block content %}{% endblock content %}
+
+    {% render_partial 'home_module.views.footer_partial' %}
+
+    {% include 'shared/footer_references.html' %}
+    {% block footer_references %}{% endblock footer_references %}
+</body>
+</html>

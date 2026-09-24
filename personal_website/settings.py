@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'home_module',
+    'django_render_partial',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +60,9 @@ ROOT_URLCONF = 'personal_website.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'templates'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,7 +74,13 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'personal_website.wsgi.application'
+# static file
+STATIC_URL = "static/"
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 
 # Database
