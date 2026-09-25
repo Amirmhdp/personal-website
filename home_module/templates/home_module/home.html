@@ -10,7 +10,38 @@
 
       <!-- Main Hero -->
       <div class="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-14">
-        <!--  =========================
+        
+            <!--  =========================
+                Hero Image
+            ==========================  -->
+        <div class="order-2 relative mx-auto w-full max-w-2xl lg:order-2">
+          <!-- Glow behind image -->
+          <div class="absolute -inset-4 rounded-4xl bg-blue/20 blur-3xl"></div>
+
+          <!-- Image Wrapper -->
+          <div class="group relative aspect-16/11 overflow-hidden rounded-2xl border border-border/80 bg-surface/50 shadow-2xl shadow-black/40">
+            <img src="/static/img/hero-programming.webp" alt="محیط برنامه نویسی و توسعه وب" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" />
+
+            <!-- Dark Gradient -->
+            <div class="absolute inset-0 bg-linear-to-t from-background/80 via-background/10 to-transparent"></div>
+
+            <!-- Left/Bottom Glow -->
+            <div class="absolute -bottom-20 -left-20 size-56 rounded-full bg-primary/30 blur-[90px]"></div>
+
+            <!-- Code Badge -->
+            <div class="absolute bottom-4 left-4 flex items-center gap-2 rounded-xl border border-white/10 bg-background/70 px-3 py-2 text-xs text-white shadow-lg backdrop-blur-md sm:bottom-5 sm:left-5">
+              <span class="flex size-7 items-center justify-center rounded-lg bg-primary/20 text-primary">
+                <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l-3 3 3 3m8-6l3 3-3 3M14 5l-4 14" />
+                </svg>
+              </span>
+
+              <span>Clean Code</span>
+            </div>
+          </div>
+        </div>
+
+            <!--  =========================
                 Text Content
             ==========================  -->
         <div class="order-1 flex flex-col items-center text-center lg:items-center lg:text-right">
@@ -56,35 +87,6 @@
           </div>
         </div>
 
-        <!--  =========================
-                Hero Image
-            ==========================  -->
-        <div class="order-2 relative mx-auto w-full max-w-2xl lg:order-2">
-          <!-- Glow behind image -->
-          <div class="absolute -inset-4 rounded-4xl bg-blue/20 blur-3xl"></div>
-
-          <!-- Image Wrapper -->
-          <div class="group relative aspect-16/11 overflow-hidden rounded-2xl border border-border/80 bg-surface/50 shadow-2xl shadow-black/40">
-            <img src="/static/img/hero-programming.webp" alt="محیط برنامه نویسی و توسعه وب" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" />
-
-            <!-- Dark Gradient -->
-            <div class="absolute inset-0 bg-linear-to-t from-background/80 via-background/10 to-transparent"></div>
-
-            <!-- Left/Bottom Glow -->
-            <div class="absolute -bottom-20 -left-20 size-56 rounded-full bg-primary/30 blur-[90px]"></div>
-
-            <!-- Code Badge -->
-            <div class="absolute bottom-4 left-4 flex items-center gap-2 rounded-xl border border-white/10 bg-background/70 px-3 py-2 text-xs text-white shadow-lg backdrop-blur-md sm:bottom-5 sm:left-5">
-              <span class="flex size-7 items-center justify-center rounded-lg bg-primary/20 text-primary">
-                <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l-3 3 3 3m8-6l3 3-3 3M14 5l-4 14" />
-                </svg>
-              </span>
-
-              <span>Clean Code</span>
-            </div>
-          </div>
-        </div>
       </div>
 
       <!-- Feature Cards -->
