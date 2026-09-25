@@ -1,0 +1,629 @@
+{% extends 'shared/layout.html' %}
+
+{% block title %}
+  درباره من
+{% endblock %}
+
+{% block header_references %}
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+  <main>
+    <!-- About / Journey + Skills -->
+    <section id="about" dir="rtl" class="relative overflow-hidden py-10">
+      <!-- Ambient Background -->
+      <div class="pointer-events-none absolute inset-0">
+        <div class="absolute -right-40 top-20 h-96 w-96 rounded-full bg-purple-600/10 blur-[120px]"></div>
+
+        <div class="absolute -left-40 bottom-0 h-96 w-96 rounded-full bg-blue-600/10 blur-[120px]"></div>
+
+        <div class="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-cyan-500/5 blur-[120px]"></div>
+      </div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="mb-12 text-center">
+          <span class="mb-4 inline-flex items-center gap-2 rounded-full border border-purple-500/20 bg-purple-500/5 px-4 py-2 text-sm font-medium text-purple-400">
+            <span class="h-1.5 w-1.5 rounded-full bg-purple-400 shadow-[0_0_10px_#A855F7]"></span>
+            درباره من
+          </span>
+
+          <h2 class="text-[22px] font-extrabold tracking-tight text-white sm:text-4xl lg:text-[26px]">
+            مسیر من و
+            <span class="bg-linear-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">مهارت‌هایی که ساختم</span>
+          </h2>
+
+          <p class="mx-auto mt-5 max-w-2xl text-sm leading-8 text-slate-400 sm:text-base">از یادگیری برنامه‌نویسی تا توسعه پروژه‌های واقعی، همیشه در حال یادگیری و تجربه تکنولوژی‌های جدید هستم.</p>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="grid gap-6 lg:grid-cols-2">
+          <!-- ================================= -->
+          <!-- Journey -->
+          <!-- ================================= -->
+
+          <div class="group relative overflow-hidden rounded-3xl border border-slate-800/80 bg-surface/80 p-6 backdrop-blur-xl transition duration-500 hover:border-purple-500/30 sm:p-8">
+            <!-- Card Glow -->
+            <div class="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-purple-600/10 blur-[90px] transition duration-500 group-hover:bg-purple-600/20"></div>
+
+            <!-- Header -->
+            <div class="relative mb-8 flex items-center justify-between">
+              <div>
+                <span class="mb-2 block text-xs font-medium uppercase tracking-[0.2em] text-purple-400">My Journey</span>
+
+                <h3 class="text-[21px] font-bold text-white">مسیر برنامه‌نویسی</h3>
+              </div>
+
+              <!-- Icon -->
+              <div class="flex h-12 w-12 items-center justify-center rounded-2xl border border-purple-500/20 bg-linear-to-br from-purple-500/15 to-blue-500/10 text-purple-400 shadow-[0_0_30px_rgba(139,92,246,0.12)]">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 6v6l4 2" />
+                  <circle cx="12" cy="12" r="9" stroke-width="1.7" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative">
+              <!-- Timeline Line -->
+              <div class="absolute right-4.5 top-4 bottom-4 w-px bg-linear-to-b from-purple-500/70 via-blue-500/40 to-transparent"></div>
+
+              <!-- Item -->
+              <div class="relative mb-8 flex gap-5">
+                <!-- Dot -->
+                <div class="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-purple-500/30 bg-surface text-purple-400 shadow-[0_0_20px_rgba(139,92,246,0.15)]">
+                  <span class="h-2 w-2 rounded-full bg-purple-400 shadow-[0_0_10px_#A855F7]"></span>
+                </div>
+
+                <div class="flex-1 pt-1">
+                  <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
+                    <h4 class="font-bold text-white">شروع یادگیری</h4>
+
+                    <span class="rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-1 text-xs text-slate-400">۱۳۹۸</span>
+                  </div>
+
+                  <p class="text-sm leading-7 text-slate-400">آشنایی با کامپیوتر و برنامه‌نویسی و شروع یادگیری مفاهیم پایه.</p>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="relative mb-8 flex gap-5">
+                <div class="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-blue-500/30 bg-surface text-blue-400">
+                  <span class="h-2 w-2 rounded-full bg-blue-400 shadow-[0_0_10px_#2563EB]"></span>
+                </div>
+
+                <div class="flex-1 pt-1">
+                  <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
+                    <h4 class="font-bold text-white">یادگیری Python</h4>
+
+                    <span class="rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-1 text-xs text-slate-400">۱۳۹۹</span>
+                  </div>
+
+                  <p class="text-sm leading-7 text-slate-400">شروع مسیر حرفه‌ای با Python و آشنایی عمیق‌تر با مفاهیم برنامه‌نویسی.</p>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="relative mb-8 flex gap-5">
+                <div class="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-cyan-500/30 bg-surface text-cyan-400">
+                  <span class="h-2 w-2 rounded-full bg-cyan-400 shadow-[0_0_10px_#06B6D4]"></span>
+                </div>
+
+                <div class="flex-1 pt-1">
+                  <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
+                    <h4 class="font-bold text-white">آشنایی با Django</h4>
+
+                    <span class="rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-1 text-xs text-slate-400">۱۴۰۰</span>
+                  </div>
+
+                  <p class="text-sm leading-7 text-slate-400">ساخت اولین پروژه‌های وب و ورود جدی‌تر به دنیای Backend Development.</p>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="relative mb-8 flex gap-5">
+                <div class="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-blue-500/30 bg-surface text-blue-400">
+                  <span class="h-2 w-2 rounded-full bg-blue-400 shadow-[0_0_10px_#2563EB]"></span>
+                </div>
+
+                <div class="flex-1 pt-1">
+                  <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
+                    <h4 class="font-bold text-white">توسعه پروژه‌های واقعی</h4>
+
+                    <span class="rounded-lg border border-slate-700 bg-slate-900/70 px-3 py-1 text-xs text-slate-400">۱۴۰۱</span>
+                  </div>
+
+                  <p class="text-sm leading-7 text-slate-400">کار روی پروژه‌های شخصی و واقعی، API و سیستم‌های Backend.</p>
+                </div>
+              </div>
+
+              <!-- Current -->
+              <div class="relative flex gap-5">
+                <div class="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-purple-500/40 bg-linear-to-br from-purple-500/20 to-blue-500/10 text-purple-400 shadow-[0_0_25px_rgba(139,92,246,0.2)]">
+                  <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+
+                <div class="flex-1 pt-1">
+                  <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
+                    <h4 class="font-bold text-white">یادگیری و پیشرفت</h4>
+
+                    <span class="rounded-lg border border-purple-500/20 bg-purple-500/10 px-3 py-1 text-xs text-purple-300">اکنون</span>
+                  </div>
+
+                  <p class="text-sm leading-7 text-slate-400">یادگیری مداوم تکنولوژی‌های جدید و ساخت پروژه‌های بهتر.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================================= -->
+          <!-- Skills -->
+          <!-- ================================= -->
+
+          <div class="group relative overflow-hidden rounded-3xl border border-slate-800/80 bg-surface/80 p-6 backdrop-blur-xl transition duration-500 hover:border-blue-500/30 sm:p-8">
+            <!-- Glow -->
+            <div class="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full bg-blue-600/10 blur-[100px] transition duration-500 group-hover:bg-blue-600/20"></div>
+
+            <!-- Header -->
+            <div class="relative mb-8">
+              <span class="mb-2 block text-xs font-medium uppercase tracking-[0.2em] text-blue-400">My Skills</span>
+
+              <div class="flex items-center justify-between">
+                <h3 class="text-[21px] font-bold text-white">مهارت‌های من</h3>
+
+                <div class="flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-500/20 bg-linear-to-br from-blue-500/15 to-cyan-500/10 text-blue-400 shadow-[0_0_30px_rgba(37,99,235,0.12)]">
+                  <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M8 9l3-3 3 3M8 15l3 3 3-3M5 12h14" />
+                  </svg>
+                </div>
+              </div>
+
+              <p class="mt-3 text-sm leading-7 text-slate-400">تکنولوژی‌هایی که در پروژه‌های شخصی و حرفه‌ای با آن‌ها کار می‌کنم.</p>
+            </div>
+
+            <!-- Skills -->
+            <div class="relative space-y-6">
+              <!-- Python -->
+              <div class="group/skill">
+                <div class="mb-2 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-500/20 bg-blue-500/10 text-sm font-bold text-blue-400">
+                      <img class="w-8" src="/static/img/python-svgrepo-com.svg" alt="" />
+                    </div>
+
+                    <div>
+                      <h4 class="text-sm font-semibold text-slate-200">Python</h4>
+
+                      <span class="text-xs text-slate-500">Backend Development</span>
+                    </div>
+                  </div>
+
+                  <span class="text-sm font-bold text-blue-400">90%</span>
+                </div>
+
+                <div class="h-2 overflow-hidden rounded-full bg-slate-800/80">
+                  <div class="h-full w-[90%] rounded-full bg-linear-to-r from-purple-500 via-blue-500 to-cyan-400 shadow-[0_0_15px_rgba(37,99,235,0.45)]"></div>
+                </div>
+              </div>
+
+              <!-- Django -->
+              <div class="group/skill">
+                <div class="mb-2 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-500/20 bg-emerald-500/10 text-sm font-bold text-emerald-400">
+                      <img src="/static/img/django-icon.svg" class="w-8" alt="" />
+                    </div>
+
+                    <div>
+                      <h4 class="text-sm font-semibold text-slate-200">Django</h4>
+
+                      <span class="text-xs text-slate-500">Web Framework</span>
+                    </div>
+                  </div>
+
+                  <span class="text-sm font-bold text-cyan-400">88%</span>
+                </div>
+
+                <div class="h-2 overflow-hidden rounded-full bg-slate-800/80">
+                  <div class="h-full w-[88%] rounded-full bg-linear-to-r from-blue-600 via-cyan-500 to-purple-400 shadow-[0_0_15px_rgba(6,182,212,0.4)]"></div>
+                </div>
+              </div>
+
+              <!-- DRF -->
+              <div class="group/skill">
+                <div class="mb-2 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-purple-500/20 bg-purple-500/10 text-sm font-bold text-purple-400">API</div>
+
+                    <div>
+                      <h4 class="text-sm font-semibold text-slate-200">Django REST Framework</h4>
+
+                      <span class="text-xs text-slate-500">REST API</span>
+                    </div>
+                  </div>
+
+                  <span class="text-sm font-bold text-purple-400">85%</span>
+                </div>
+
+                <div class="h-2 overflow-hidden rounded-full bg-slate-800/80">
+                  <div class="h-full w-[85%] rounded-full bg-linear-to-r from-purple-600 via-fuchsia-500 to-blue-500 shadow-[0_0_15px_rgba(168,85,247,0.4)]"></div>
+                </div>
+              </div>
+
+              <!-- PostgreSQL -->
+              <div class="group/skill">
+                <div class="mb-2 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-500/20 bg-cyan-500/10 text-sm font-bold text-cyan-400">
+                      <img src="/static/img/postgresql-icon.svg" class="w-8" alt="" />
+                    </div>
+
+                    <div>
+                      <h4 class="text-sm font-semibold text-slate-200">PostgreSQL</h4>
+
+                      <span class="text-xs text-slate-500">Database</span>
+                    </div>
+                  </div>
+
+                  <span class="text-sm font-bold text-cyan-400">82%</span>
+                </div>
+
+                <div class="h-2 overflow-hidden rounded-full bg-slate-800/80">
+                  <div class="h-full w-[82%] rounded-full bg-linear-to-r from-cyan-500 via-blue-500 to-purple-500 shadow-[0_0_15px_rgba(6,182,212,0.4)]"></div>
+                </div>
+              </div>
+
+              <!-- JavaScript -->
+              <div class="group/skill">
+                <div class="mb-2 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-yellow-500/20 bg-yellow-500/10 text-sm font-bold text-yellow-400">JS</div>
+
+                    <div>
+                      <h4 class="text-sm font-semibold text-slate-200">JavaScript</h4>
+
+                      <span class="text-xs text-slate-500">Frontend</span>
+                    </div>
+                  </div>
+
+                  <span class="text-sm font-bold text-blue-400">75%</span>
+                </div>
+
+                <div class="h-2 overflow-hidden rounded-full bg-slate-800/80">
+                  <div class="h-full w-[75%] rounded-full bg-linear-to-r from-purple-500 via-blue-500 to-cyan-400 shadow-[0_0_15px_rgba(59,141,255,0.4)]"></div>
+                </div>
+              </div>
+
+              <!-- Docker -->
+              <div class="group/skill">
+                <div class="mb-2 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-500/20 bg-cyan-500/10 text-sm font-bold text-cyan-400">DK</div>
+
+                    <div>
+                      <h4 class="text-sm font-semibold text-slate-200">Docker</h4>
+
+                      <span class="text-xs text-slate-500">DevOps</span>
+                    </div>
+                  </div>
+
+                  <span class="text-sm font-bold text-purple-400">70%</span>
+                </div>
+
+                <div class="h-2 overflow-hidden rounded-full bg-slate-800/80">
+                  <div class="h-full w-[70%] rounded-full bg-linear-to-r from-blue-600 via-purple-500 to-pink-500 shadow-[0_0_15px_rgba(139,92,246,0.4)]"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Gradient -->
+            <div class="pointer-events-none absolute bottom-0 left-0 h-32 w-full bg-linear-to-t from-blue-500/4 to-transparent"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" dir="rtl" class="relative overflow-hidden py-10">
+      <!-- Ambient Glow -->
+      <div class="pointer-events-none absolute inset-0">
+        <div class="absolute -right-32 top-10 h-80 w-80 rounded-full bg-purple-600/10 blur-[120px]"></div>
+
+        <div class="absolute -left-32 bottom-10 h-80 w-80 rounded-full bg-blue-600/10 blur-[120px]"></div>
+
+        <div class="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/5 blur-[120px]"></div>
+      </div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- About Card -->
+        <div class="group relative overflow-hidden rounded-3xl border border-slate-800/80 bg-surface/80 p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-purple-500/30 sm:p-8 lg:p-10">
+          <!-- Card Glow -->
+          <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-purple-600/10 blur-[100px] transition duration-500 group-hover:bg-purple-600/20"></div>
+
+          <div class="pointer-events-none absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-blue-600/10 blur-[100px] transition duration-500 group-hover:bg-blue-600/20"></div>
+
+          <!-- Header -->
+          <div class="relative mb-7 flex items-center gap-4">
+            <div class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-purple-500/20 bg-linear-to-br from-purple-500/15 via-blue-500/10 to-transparent text-purple-400 shadow-[0_0_30px_rgba(139,92,246,0.12)]">
+              <svg class="h-7 w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M20 21a8 8 0 10-16 0" />
+                <circle cx="12" cy="7" r="4" stroke-width="1.7" />
+              </svg>
+            </div>
+
+            <div>
+              <span class="mb-1 block text-xs font-semibold uppercase tracking-[0.18em] text-purple-400">About Me</span>
+
+              <h2 class="text-lg font-extrabold text-white sm:text-lg">درباره من</h2>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="relative max-w-4xl">
+            <p class="text-[15px] leading-8 text-slate-300 sm:leading-9">من امیر هستم؛ یک توسعه‌دهنده نرم‌افزار که به ساخت محصولات مدرن، کاربردی و باکیفیت علاقه دارم. همیشه سعی می‌کنم در کنار نوشتن کد تمیز و قابل نگهداری، به تجربه کاربر، جزئیات طراحی و عملکرد محصول هم توجه کنم.</p>
+
+            <p class="mt-4 text-[15px] leading-8 text-slate-400 sm:leading-9">برای من برنامه‌نویسی فقط نوشتن کد نیست؛ فرصتی برای حل مسئله، یادگیری و تبدیل ایده‌ها به تجربه‌هایی واقعی و ارزشمند است. به یادگیری مداوم باور دارم و همیشه تلاش می‌کنم مهارت‌ها و نگاه خودم به توسعه نرم‌افزار را بهتر کنم.</p>
+          </div>
+
+          <!-- Bottom Accent -->
+          <div class="relative mt-8 flex items-center gap-3 border-t border-slate-800 pt-6">
+            <div class="h-1.5 w-1.5 rounded-full bg-purple-400 shadow-[0_0_10px_rgba(168,85,247,0.8)]"></div>
+
+            <span class="text-sm text-slate-500">ساختن، یادگرفتن و بهتر شدن؛ هر روز.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mindset" dir="rtl" class="relative overflow-hidden py-10">
+      <!-- Ambient Glow -->
+      <div class="pointer-events-none absolute inset-0">
+        <div class="absolute -right-32 top-10 h-80 w-80 rounded-full bg-purple-600/10 blur-[120px]"></div>
+
+        <div class="absolute -left-32 bottom-10 h-80 w-80 rounded-full bg-blue-600/10 blur-[120px]"></div>
+
+        <div class="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/5 blur-[120px]"></div>
+      </div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-6 lg:grid-cols-2">
+          <!-- ================================= -->
+          <!-- Development Philosophy -->
+          <!-- ================================= -->
+
+          <div class="group relative overflow-hidden rounded-3xl border border-slate-800/80 bg-surface/80 p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-purple-500/30 sm:p-8">
+            <!-- Glow -->
+            <div class="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-purple-600/10 blur-[100px] transition duration-500 group-hover:bg-purple-600/20"></div>
+
+            <!-- Header -->
+            <div class="relative mb-7 flex items-center justify-between">
+              <div>
+                <span class="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-purple-400">My Philosophy</span>
+
+                <h2 class="text-lg font-extrabold text-white ">رویکرد من به توسعه نرم‌افزار</h2>
+              </div>
+
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-purple-500/20 bg-linear-to-br from-purple-500/15 via-blue-500/10 to-transparent text-purple-400 shadow-[0_0_30px_rgba(139,92,246,0.12)]">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M9.75 17L15 12.5 9.75 8" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M4 19.5V4.5A2.5 2.5 0 016.5 2h11A2.5 2.5 0 0120 4.5v15a2.5 2.5 0 01-2.5 2h-11A2.5 2.5 0 014 19.5z" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Philosophy Items -->
+            <div class="relative space-y-3">
+              <!-- Item -->
+              <div class="group/item flex gap-4 rounded-2xl border border-slate-800/80 bg-surface/70 p-4 transition duration-300 hover:border-purple-500/25 hover:bg-purple-500/3">
+                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-purple-500/20 to-blue-500/10 text-purple-400">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M8 9h8M8 13h5M5 20l1.5-4.5A8 8 0 1119 16.5" />
+                  </svg>
+                </div>
+
+                <div>
+                  <h3 class="mb-1 font-bold text-slate-100">کدنویسی تمیز و قابل نگهداری</h3>
+
+                  <p class="text-sm leading-7 text-slate-400">تلاش می‌کنم کدی بنویسم که علاوه بر درست کار کردن، خوانا، قابل توسعه و قابل نگهداری باشد.</p>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="group/item flex gap-4 rounded-2xl border border-slate-800/80 bg-surface/70 p-4 transition duration-300 hover:border-blue-500/25 hover:bg-blue-500/3">
+                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-blue-500/20 to-cyan-500/10 text-blue-400">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 6v6l4 2" />
+                    <circle cx="12" cy="12" r="9" />
+                  </svg>
+                </div>
+
+                <div>
+                  <h3 class="mb-1 font-bold text-slate-100">تمرکز بر تجربه کاربری</h3>
+
+                  <p class="text-sm leading-7 text-slate-400">توسعه نرم‌افزار فقط درباره کد نیست؛ تجربه‌ای که کاربر دریافت می‌کند بخش مهمی از محصول است.</p>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="group/item flex gap-4 rounded-2xl border border-slate-800/80 bg-surface/70 p-4 transition duration-300 hover:border-cyan-500/25 hover:bg-cyan-500/3">
+                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-cyan-500/20 to-blue-500/10 text-cyan-400">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M4 17l6-6 4 4 6-8" />
+                  </svg>
+                </div>
+
+                <div>
+                  <h3 class="mb-1 font-bold text-slate-100">یادگیری مداوم</h3>
+
+                  <p class="text-sm leading-7 text-slate-400">تکنولوژی همیشه در حال تغییر است و یادگیری مداوم را بخشی از مسیر حرفه‌ای خودم می‌دانم.</p>
+                </div>
+              </div>
+
+              <!-- Item -->
+              <div class="group/item flex gap-4 rounded-2xl border border-slate-800/80 bg-surface/70 p-4 transition duration-300 hover:border-purple-500/25 hover:bg-purple-500/3">
+                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-purple-500/20 to-pink-500/10 text-purple-400">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 3v18M3 12h18M5.5 5.5l13 13M18.5 5.5l-13 13" />
+                  </svg>
+                </div>
+
+                <div>
+                  <h3 class="mb-1 font-bold text-slate-100">حل مسئله و تفکر منطقی</h3>
+
+                  <p class="text-sm leading-7 text-slate-400">هر چالش برای من فرصتی است تا مسئله را بهتر درک کنم و راه‌حل مناسب‌تری پیدا کنم.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ================================= -->
+          <!-- Interests -->
+          <!-- ================================= -->
+
+          <div class="group relative overflow-hidden rounded-3xl border border-slate-800/80 bg-surface/80 p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-blue-500/30 sm:p-8">
+            <div class="pointer-events-none absolute -left-24 -bottom-24 h-64 w-64 rounded-full bg-blue-600/10 blur-[100px]"></div>
+
+            <!-- Header -->
+            <div class="relative mb-8 flex items-center justify-between">
+              <div>
+                <span class="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-blue-400">Interests</span>
+
+                <h2 class="text-lg font-extrabold text-white ">علاقه‌مندی‌ها</h2>
+              </div>
+
+              <div class="flex h-12 w-12 items-center justify-center rounded-2xl border border-pink-500/20 bg-linear-to-br from-pink-500/15 to-purple-500/10 text-pink-400">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M20.8 8.8c0 5.5-8.8 10.4-8.8 10.4S3.2 14.3 3.2 8.8A4.8 4.8 0 018 4c1.6 0 3.1.8 4 2 0.9-1.2 2.4-2 4-2a4.8 4.8 0 014.8 4.8z" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Interests Grid -->
+            <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              <!-- Interest -->
+              <div class="group/interest flex min-h-30 flex-col items-center justify-center rounded-2xl border border-slate-800 bg-surface/80 p-4 text-center transition duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:bg-purple-500/4">
+                <div class="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10 text-purple-400 transition duration-300 group-hover/interest:scale-110 group-hover/interest:shadow-[0_0_20px_rgba(139,92,246,0.25)]">
+                  <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M8 9l3-3 3 3M8 15l3 3 3-3M5 12h14" />
+                  </svg>
+                </div>
+
+                <span class="text-sm font-semibold text-slate-200">برنامه‌نویسی</span>
+              </div>
+
+              <!-- Interest -->
+              <div class="group/interest flex min-h-30 flex-col items-center justify-center rounded-2xl border border-slate-800 bg-surface/80 p-4 text-center transition duration-300 hover:-translate-y-1 hover:border-cyan-500/30 hover:bg-cyan-500/4">
+                <div class="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400 transition duration-300 group-hover/interest:scale-110">
+                  <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <rect x="4" y="4" width="16" height="16" rx="2" stroke-width="1.7" />
+                    <path d="M9 9h6v6H9z" stroke-width="1.7" />
+                  </svg>
+                </div>
+
+                <span class="text-sm font-semibold text-slate-200">فناوری و نوآوری</span>
+              </div>
+
+              <!-- Interest -->
+              <div class="group/interest flex min-h-30 flex-col items-center justify-center rounded-2xl border border-slate-800 bg-surface/80 p-4 text-center transition duration-300 hover:-translate-y-1 hover:border-blue-500/30 hover:bg-blue-500/4">
+                <div class="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 transition duration-300 group-hover/interest:scale-110">
+                  <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M5 4h10a4 4 0 014 4v12H9a4 4 0 01-4-4V4z" />
+                  </svg>
+                </div>
+
+                <span class="text-sm font-semibold text-slate-200">کتاب و مطالعه</span>
+              </div>
+
+              <!-- Interest -->
+              <div class="group/interest flex min-h-30 flex-col items-center justify-center rounded-2xl border border-slate-800 bg-surface/80 p-4 text-center transition duration-300 hover:-translate-y-1 hover:border-pink-500/30 hover:bg-pink-500/4">
+                <div class="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-pink-500/10 text-pink-400 transition duration-300 group-hover/interest:scale-110">
+                  <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M9 18V5l10-2v13" />
+                    <circle cx="6" cy="18" r="3" />
+                    <circle cx="16" cy="16" r="3" />
+                  </svg>
+                </div>
+
+                <span class="text-sm font-semibold text-slate-200">موسیقی</span>
+              </div>
+
+              <!-- Interest -->
+              <div class="group/interest flex min-h-30 flex-col items-center justify-center rounded-2xl border border-slate-800 bg-surface/80 p-4 text-center transition duration-300 hover:-translate-y-1 hover:border-blue-500/30 hover:bg-blue-500/4">
+                <div class="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400 transition duration-300 group-hover/interest:scale-110">
+                  <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M2 16l6-6 4 4 4-5 6 7" />
+                  </svg>
+                </div>
+
+                <span class="text-sm font-semibold text-slate-200">سفر</span>
+              </div>
+
+              <!-- Interest -->
+              <div class="group/interest flex min-h-30 flex-col items-center justify-center rounded-2xl border border-slate-800 bg-surface/80 p-4 text-center transition duration-300 hover:-translate-y-1 hover:border-purple-500/30 hover:bg-purple-500/4">
+                <div class="mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10 text-purple-400 transition duration-300 group-hover/interest:scale-110">
+                  <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M6 13l2-2 2 2 3-4 5 6" />
+                  </svg>
+                </div>
+
+                <span class="text-sm font-semibold text-slate-200">ورزش</span>
+              </div>
+            </div>
+
+            <!-- Quote -->
+            <div class="relative mt-6 border-t border-slate-800 pt-6">
+              <p class="text-center text-sm leading-7 text-slate-500">«یادگیری برای من یک مسیر است، نه یک مقصد.»</p>
+
+              <div class="mt-2 text-center font-script text-2xl text-purple-400 drop-shadow-[0_0_12px_rgba(168,85,247,0.45)]">Amir</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="relative overflow-hidden bg-background px-4 pb-8 pt-2" dir="rtl">
+      <div class="relative mx-auto max-w-6xl overflow-hidden rounded-2xl border border-border bg-linear-to-r from-surface via-surface-light to-[#12091f] shadow-[0_0_45px_rgba(139,92,246,0.12)]">
+        <!-- Decorative glow -->
+        <div class="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-primary/20 blur-3xl"></div>
+
+        <div class="grid min-h-70 items-center md:grid-cols-2">
+          <!--  =========================
+                    TEXT
+                ==========================  -->
+          <div class="relative z-10 px-7 py-12 text-center md:px-12 md:text-right">
+            <h2 class="text-2xl font-black leading-relaxed text-text md:text-3xl">
+              برای همکاری در پروژه بعدی شما
+
+              <span class="bg-linear-to-r from-blue via-primary-light to-pink bg-clip-text text-transparent">آماده‌ام!</span>
+            </h2>
+
+            <p class="mx-auto mt-4 max-w-lg text-sm leading-7 text-muted md:mx-0">بیاید ایده‌تون رو با هم به یک تجربه واقعی و حرفه‌ای تبدیل کنیم.</p>
+
+            <a href="#contact" class="group mt-7 inline-flex items-center gap-3 rounded-xl bg-linear-to-r from-blue to-primary px-7 py-3.5 text-sm font-bold text-text shadow-[0_0_25px_rgba(37,99,235,0.25)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_35px_rgba(139,92,246,0.40)]">
+              تماس با من<svg class="h-5 w-5 transition duration-300 group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 6l6 6-6 6" />
+              </svg>
+            </a>
+          </div>
+
+          <!--  =========================
+                    IMAGE
+                ==========================  -->
+          <div class="relative h-full min-h-65 overflow-hidden">
+            <!-- Dark overlay -->
+            <div class="absolute inset-0 z-10 bg-linear-to-l from-transparent via-background/20 to-background/80"></div>
+
+            <img src="https://www.epochstudio.net/images/AppWebDev.jpg" alt="محیط برنامه نویسی" class="h-full w-full object-cover opacity-80 transition duration-700 hover:scale-105" />
+
+            <!-- Blue glow -->
+            <div class="absolute inset-0 bg-blue/10 mix-blend-screen"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+{% endblock %}

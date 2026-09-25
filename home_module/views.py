@@ -10,3 +10,6 @@ def header_partial(request):
 
 def footer_partial(request):
     return render(request, 'shared/footer.html')
+
+def about_me(request):
+    return render(request, 'home_module/about_me.html')
