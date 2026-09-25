@@ -1,7 +1,962 @@
 {% extends 'shared/layout.html' %}
 {% block content %}
 
+<main>
 
+    <!--  Hero Section -->
+    <section id="hero" class="relative overflow-hidden px-4 pb-10 pt-8 sm:px-6 lg:px-8 lg:pb-14 lg:pt-10">
+        <!-- Background Glow -->
+        <div class="pointer-events-none absolute -left-40 top-20 h-80 w-80 rounded-full bg-primary/20 blur-[120px]"></div>
+
+        <div class="pointer-events-none absolute -right-40 top-10 h-96 w-96 rounded-full bg-blue/15 blur-[140px]"></div>
+
+        <!-- Main Hero -->
+        <div class="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-14">
+
+            <!-- =========================
+                Text Content
+            ========================== -->
+            <div class="order-1 flex flex-col items-center text-center lg:items-center lg:text-right">
+
+                <!-- Greeting -->
+                <div class="mb-4 flex items-center gap-2 text-sm font-medium sm:text-base">
+                    <span class="bg-linear-to-l from-blue via-primary to-purple-500 bg-clip-text text-transparent drop-shadow-[0_0_8px_rgba(139,92,246,0.3)]">
+                        سلام، من امیر هستم
+                    </span>
+                    <span>👋</span>
+                </div>
+
+
+                <!-- Heading -->
+                <h1 class="max-w-2xl text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[56px] xl:text-[64px]">
+                    توسعه‌دهنده وب
+                    <span class="mt-2 block text-2xl sm:text-3xl md:text-4xl lg:text-[38px]">
+                        با تمرکز بر
+                        <span
+                            class="bg-linear-to-r from-blue via-primary to-fuchsia-500 bg-clip-text text-transparent">
+                            Django
+                        </span>
+                        و
+                        <span class="bg-linear-to-r from-primary to-fuchsia-500 bg-clip-text text-transparent">
+                            Python
+                        </span>
+                    </span>
+                </h1>
+
+
+                <!-- Description -->
+                <p class="mt-6 max-w-xl text-sm leading-8 text-muted sm:text-base lg:text-[15px]">
+                    من وب‌سایت‌ها و سیستم‌های تحت وب سریع، امن و قابل توسعه
+                    با تجربه کاربری عالی طراحی و توسعه می‌دهم.
+                </p>
+
+
+                <!-- CTA -->
+                <div class="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:justify-center lg:justify-start">
+
+                    <!-- Primary CTA -->
+                    <a href="#projects" class="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-linear-to-r from-primary to-blue px-7 text-sm font-semibold text-white shadow-lg shadow-primary/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-primary/30">
+                        <span>
+                            مشاهده پروژه‌ها
+                        </span>
+
+                        <svg class="size-4 transition-transform duration-300 group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 12H5m7 7l-7-7 7-7"/>
+                        </svg>
+                    </a>
+
+
+                    <!-- Secondary CTA -->
+                    <a href="#contact" class="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-border  bg-surface/60 px-7 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300  hover:border-primary/60  hover:bg-primary/10">
+                        <span>
+                            تماس با من
+                        </span>
+
+                        <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7 A8.38 8.38 0 014 11.5 8.5 8.5 0 0112.5 3 8.5 8.5 0 0121 11.5z"/>
+                        </svg>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                Hero Image
+            ========================== -->
+            <div class="order-2 relative mx-auto w-full max-w-2xl lg:order-2">
+
+                <!-- Glow behind image -->
+                <div class="absolute -inset-4 rounded-4xl bg-blue/20 blur-3xl"></div>
+
+                <!-- Image Wrapper -->
+                <div class="group relative aspect-16/11 overflow-hidden rounded-2xl border border-border/80  bg-surface/50 shadow-2xl shadow-black/40">
+
+                    <img src="/static/img/hero-programming.webp" alt="محیط برنامه نویسی و توسعه وب" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]">
+
+
+                    <!-- Dark Gradient -->
+                    <div class="absolute inset-0 bg-linear-to-t  from-background/80  via-background/10 to-transparent"></div>
+
+
+                    <!-- Left/Bottom Glow -->
+                    <div class="absolute -bottom-20 -left-20 size-56 rounded-full  bg-primary/30 blur-[90px]"></div>
+
+
+                    <!-- Code Badge -->
+                    <div class="absolute bottom-4 left-4 flex items-center gap-2 rounded-xl border border-white/10  bg-background/70 px-3 py-2 text-xs text-white shadow-lg backdrop-blur-md sm:bottom-5 sm:left-5">
+                        <span class="flex size-7 items-center justify-center rounded-lg bg-primary/20 text-primary" >
+                            <svg class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l-3 3 3 3m8-6l3 3-3 3M14 5l-4 14"/>
+                            </svg>
+                        </span>
+
+                        <span>
+                            Clean Code
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Feature Cards -->
+        <div class="relative mx-auto mt-8 grid max-w-7xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 lg:gap-2">
+
+            <!-- Card -->
+            <div class="group flex min-h-23 items-center gap-3 rounded-xl border border-border/80  bg-surface/60 px-3 py-3 backdrop-blur-md transition-all duration-300 hover:-translate-y-1  hover:border-primary/40  hover:bg-surface">
+
+                <div class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all duration-300  group-hover:bg-primary/20">
+                    <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18m9-9H3"/>
+                    </svg>
+                </div>
+
+                <div class="min-w-0">
+                    <h3 class="text-sm font-bold text-white">
+                        پروژه واقعی
+                    </h3>
+
+                    <p class="mt-1 text-[11px] leading-5 text-muted">
+                        تجربه کار با پروژه‌های واقعی
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Card -->
+            <div class="group flex min-h-23 items-center gap-3 rounded-xl border border-border/80  bg-surface/60 px-3 py-3 backdrop-blur-md transition-all duration-300 hover:-translate-y-1  hover:border-primary/40  hover:bg-surface">
+
+                <div class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400 transition-all duration-300  group-hover:bg-cyan-500/20">
+                    <span class="text-sm font-bold">
+                        DP
+                    </span>
+                </div>
+
+                <div class="min-w-0">
+                    <h3 class="text-sm font-bold text-white">
+                        Django / DRF
+                    </h3>
+                    <p class="mt-1 text-[11px] leading-5 text-muted">
+                        توسعه Backend حرفه‌ای
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Card -->
+            <div class="group flex min-h-23 items-center gap-3 rounded-xl border border-border/80  bg-surface/60 px-3 py-3 backdrop-blur-md transition-all duration-300 hover:-translate-y-1  hover:border-primary/40  hover:bg-surface">
+
+                <div class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-violet-500/10 text-violet-400">
+                    <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 2l9 5-9 5-9-5 9-5z M3 12l9 5 9-5 M3 17l9 5 9-5"/>
+                    </svg>
+                </div>
+
+                <div class="min-w-0">
+                    <h3 class="text-sm font-bold text-white">
+                        PostgreSQL / Redis
+                    </h3>
+
+                    <p class="mt-1 text-[11px] leading-5 text-muted">
+                        پایگاه داده و کش
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Card -->
+            <div class="group flex min-h-23 items-center gap-3 rounded-xl border border-border/80  bg-surface/60 px-3 py-3 backdrop-blur-md transition-all duration-300 hover:-translate-y-1  hover:border-primary/40  hover:bg-surface">
+
+                <div class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-blue-500/10 text-blue-400">
+                    <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16v10H4z M8 7V4h8v3 M8 17v3h8v-3"/>
+                    </svg>
+                </div>
+
+                <div class="min-w-0">
+                    <h3 class="text-sm font-bold text-white">
+                        Docker / Celery
+                    </h3>
+
+                    <p class="mt-1 text-[11px] leading-5 text-muted">
+                        استقرار و مدیریت
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Card -->
+            <div class="group flex min-h-23 items-center gap-3 rounded-xl border border-border/80  bg-surface/60 px-3 py-3 backdrop-blur-md transition-all duration-300 hover:-translate-y-1  hover:border-primary/40  hover:bg-surface">
+
+                <div class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-fuchsia-500/10 text-fuchsia-400">
+                    <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z M12 3v9 M4 7.5l8 4.5 8-4.5"/>
+                    </svg>
+                </div>
+
+                <div class="min-w-0">
+                    <h3 class="text-sm font-bold text-white">
+                        Clean Code
+                    </h3>
+
+                    <p class="mt-1 text-[11px] leading-5 text-muted">
+                        کدنویسی تمیز و اصولی
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PROJECTS LIST -->
+    <section class="px-4 py-2 sm:px-6 lg:px-8">
+        <div class="mx-auto max-w-7xl">
+
+            <!-- Section Header -->
+            <div class="relative mb-10">
+
+                <!-- Main Header -->
+                <div class="text-center">
+
+                    <!-- Section Label -->
+                    <div class="mb-3 flex items-center justify-center gap-3 text-sm font-medium text-primary">
+
+                        <span class="h-px w-8 bg-linear-to-l from-primary to-blue"></span>
+
+                        <span>
+                            نمونه پروژه‌های من
+                        </span>
+
+                        <span class="h-px w-8 bg-linear-to-r from-primary to-blue"></span>
+
+                    </div>
+
+
+                    <!-- Title -->
+                    <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                        آخرین پروژه‌های من
+                    </h2>
+
+
+                    <!-- Description -->
+                    <p class="mx-auto mt-3 max-w-xl text-sm leading-7 text-muted sm:text-base">
+                        در این بخش می‌توانید برخی از پروژه‌های انجام شده توسط من را مشاهده کنید.
+                    </p>
+
+                </div>
+
+                <!-- View All Projects -->
+                <a href="#" class="group absolute left-0 top-1/2 hidden -translate-y-1/2 items-center gap-2 text-sm font-medium text-primary transition-colors duration-300 hover:text-blue sm:flex">
+                    <span>
+                        مشاهده پروژه‌ها
+                    </span>
+
+                    <span class="transition-transform duration-300 group-hover:-translate-x-1">←</span>
+                </a>
+
+            </div>
+
+
+            <!-- Project Grid -->
+            <div class="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
+
+
+                <!-- Project Card -->
+                <article class="group overflow-hidden rounded-2xl border border-border bg-surface/70 shadow-lg shadow-black/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
+
+                    <!-- Image -->
+                    <div class="relative aspect-video overflow-hidden">
+
+                        <img src="/static/img/doctor-appointment-system.webp" alt="سیستم نوبت‌دهی آنلاین پزشکی" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+
+                        <!-- Gradient -->
+                        <div class="absolute inset-0 bg-linear-to-t from-background/80 via-transparent to-transparent"> </div>
+
+                        <!-- Project Type -->
+                        <span class="absolute bottom-3 right-3 rounded-lg border border-primary/30 bg-primary/90 px-3 py-1 text-xs font-medium text-white shadow-lg shadow-primary/20">
+                            پروژه کامل
+                        </span>
+
+                    </div>
+
+
+                    <!-- Content -->
+                    <div class="p-5">
+
+                        <!-- Title -->
+                        <h3 class="text-lg font-bold text-white transition-colors duration-300 group-hover:text-primary">
+                            سیستم نوبت‌دهی آنلاین پزشکی
+                        </h3>
+
+                        <!-- Description -->
+                        <p class="mt-3 line-clamp-2 text-sm leading-7 text-muted">
+                            یک پلتفرم کامل برای رزرو وقت ملاقات پزشکان،
+                            مدیریت نوبت‌ها و اطلاع‌رسانی به بیماران.
+                        </p>
+
+
+                        <!-- Technologies -->
+                        <div class="mt-5 flex flex-wrap gap-2">
+
+                            <span class="rounded-lg border border-border bg-background/70 px-3 py-1.5 text-xs text-muted">
+                                Django
+                            </span>
+
+                            <span class="rounded-lg border border-border bg-background/70 px-3 py-1.5 text-xs text-muted">
+                                DRF
+                            </span>
+
+                            <span class="rounded-lg border border-border bg-background/70 px-3 py-1.5 text-xs text-muted">
+                                PostgreSQL
+                            </span>
+
+                            <span class="rounded-lg border border-border bg-background/70 px-3 py-1.5 text-xs text-muted">
+                                Redis
+                            </span>
+
+                        </div>
+
+
+                        <!-- Actions -->
+                        <div class="mt-6 flex items-center justify-between border-t border-border pt-4">
+
+                            <a href="#" class="group/link flex items-center gap-2 text-sm font-medium text-primary transition-colors duration-300 hover:text-blue">
+
+                                <span>مشاهده جزئیات</span>
+
+                                <span class="transition-transform duration-300 group-hover/link:-translate-x-1">
+                                    ←
+                                </span>
+
+                            </a>
+
+
+                            <a href="#" class="flex items-center gap-2 text-sm text-muted transition-colors duration-300 hover:text-white">
+
+                                <span>GitHub</span>
+
+                                <svg class="size-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61c-.546-1.387-1.333-1.756-1.333-1.756c-1.089-.745.084-.729.084-.729c1.205.084 1.84 1.237 1.84 1.237c1.07 1.834 2.809 1.304 3.495.997c.108-.776.418-1.305.762-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3.003-.404c1.02.005 2.045.138 3.003.404c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.435.375.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                                </svg>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Project Card -->
+                <article class="group overflow-hidden rounded-2xl border border-border bg-surface/70 shadow-lg shadow-black/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-xl hover:shadow-cyan-500/10">
+
+                    <div class="relative aspect-video overflow-hidden">
+
+                        <img src="/static/img/personal_website.webp" alt="پروژه وبسایت شخصی" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+
+                        <div class="absolute inset-0 bg-linear-to-t from-background/80 via-transparent to-transparent"></div>
+
+                        <span class="absolute bottom-3 right-3 rounded-lg border border-primary/30 bg-primary/90 px-3 py-1 text-xs font-medium text-white shadow-lg shadow-primary/20">
+                            پروژه کامل
+                        </span>
+
+                    </div>
+
+
+                    <div class="p-5">
+
+                        <h3 class="text-lg font-bold text-white transition-colors duration-300 group-hover:text-primary">
+                            پورتفولیو شخصی پروژه
+                        </h3>
+
+                        <p class="mt-3 line-clamp-2 text-sm leading-7 text-muted">
+                           یک پورتفولیو شخصی مدرن برای نمایش مهارت‌ها، پروژه‌ها و مسیر حرفه‌ای در حوزه برنامه‌نویسی.
+                        </p>
+
+                        <div class="mt-5 flex flex-wrap gap-2">
+
+                            <span class="rounded-lg border border-border bg-background/70 px-3 py-1.5 text-xs text-muted">
+                                Django
+                            </span>
+
+                            <span class="rounded-lg border border-border bg-background/70 px-3 py-1.5 text-xs text-muted">
+                                JavaScript
+                            </span>
+
+                            <span class="rounded-lg border border-border bg-background/70 px-3 py-1.5 text-xs text-muted">
+                                PostgreSQL
+                            </span>
+
+                            <span class="rounded-lg border border-border bg-background/70 px-3 py-1.5 text-xs text-muted">
+                                Tailwind
+                            </span>
+
+                        </div>
+
+                        <div class="mt-6 flex items-center justify-between border-t border-border pt-4">
+
+                            <a href="#" class="group/link flex items-center gap-2 text-sm font-medium text-cyan-400 transition-colors duration-300 hover:text-primary">
+
+                                <span>مشاهده جزئیات</span>
+                                <span class="transition-transform duration-300 group-hover/link:-translate-x-1">
+                                    ←
+                                </span>
+
+                            </a>
+
+                            <a href="#" class="flex items-center gap-2 text-sm text-muted transition-colors duration-300 hover:text-white">
+                                <span>GitHub</span>
+
+                                <svg class="size-4 fill-current" viewBox="0 0 24 24">
+                                    <path d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61c-.546-1.387-1.333-1.756-1.333-1.756c-1.089-.745.084-.729.084-.729c1.205.084 1.84 1.237 1.84 1.237c1.07 1.834 2.809 1.304 3.495.997c.108-.776.418-1.305.762-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3.003-.404c1.02.005 2.045.138 3.003.404c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                                </svg>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Project Card -->
+                <article class="group overflow-hidden rounded-2xl border border-border bg-surface/70 shadow-lg shadow-black/10 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10">
+
+                    <div class="relative aspect-video overflow-hidden">
+
+                        <img src="/static/img/newkala.webp" alt="فروشگاه اینترنتی محصولات" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+
+                        <div class="absolute inset-0 bg-linear-to-t from-background/80 via-transparent to-transparent"></div>
+
+                        <span class="absolute bottom-3 right-3 rounded-lg border border-primary/30 bg-primary/90 px-3 py-1 text-xs font-medium text-white shadow-lg shadow-primary/20">
+                            پروژه کامل
+                        </span>
+
+                    </div>
+
+
+                    <div class="p-5">
+
+                        <h3 class="text-lg font-bold text-white transition-colors duration-300 group-hover:text-primary">
+                            فروشگاه اینترنتی محصولات
+                        </h3>
+
+                        <p class="mt-3 line-clamp-2 text-sm leading-7 text-muted">
+                            فروشگاه آنلاین با پنل مدیریت، درگاه پرداخت
+                            و سیستم سفارش‌دهی پیشرفته.
+                        </p>
+
+                        <div class="mt-5 flex flex-wrap gap-2">
+
+                            <span class="rounded-lg border border-border bg-background/70 px-3 py-1.5 text-xs text-muted">
+                                Django
+                            </span>
+
+                            <span class="rounded-lg border border-border bg-background/70 px-3 py-1.5 text-xs text-muted">
+                                JavaScript
+                            </span>
+
+                            <span class="rounded-lg border border-border bg-background/70 px-3 py-1.5 text-xs text-muted">
+                                PostgreSQL
+                            </span>
+
+                            <span class="rounded-lg border border-border bg-background/70 px-3 py-1.5 text-xs text-muted">
+                                Docker
+                            </span>
+
+                        </div>
+
+                        <div class="mt-6 flex items-center justify-between border-t border-border pt-4">
+
+                            <a href="#" class="group/link flex items-center gap-2 text-sm font-medium text-primary transition-colors duration-300 hover:text-blue">
+
+                                <span>مشاهده جزئیات</span>
+
+                                <span class="transition-transform duration-300 group-hover/link:-translate-x-1">
+                                    ←
+                                </span>
+
+                            </a>
+
+                            <a href="#" class="flex items-center gap-2 text-sm text-muted transition-colors duration-300 hover:text-white">
+
+                                <span>GitHub</span>
+
+                                <svg class="size-4 fill-current" viewBox="0 0 24 24">
+
+                                    <path d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61c-.546-1.387-1.333-1.756-1.333-1.756c-1.089-.745.084-.729.084-.729c1.205.084 1.84 1.237 1.84 1.237c.108-.776.418-1.305.762-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3.003-.404c1.02.005 2.045.138 3.003.404c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                                </svg>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+    </section>  
+
+    <!-- SKILLS LIST -->
+    <section id="skills" class="overflow-hidden px-4 py-16 sm:py-20 lg:py-11.25">
+
+        <div class="mx-auto max-w-7xl">
+
+            <!-- Section Header -->
+            <div class="mb-10 text-center sm:mb-5">
+
+                <div class="mb-3 flex items-center justify-center gap-3 text-sm font-medium text-primary">
+
+                    <span class="h-px w-8 bg-linear-to-l from-primary to-blue"></span>
+
+                    <span>
+                        مهارت‌ها و تکنولوژی‌ها
+                    </span>
+
+                    <span class="h-px w-8 bg-linear-to-r from-primary to-blue"></span>
+
+                </div>
+
+                <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                    ابزارهایی که با آن‌ها کار می‌کنم
+                </h2>
+
+                <p class="mx-auto mt-3 max-w-2xl text-sm leading-7 text-muted sm:text-base">
+                    تکنولوژی‌هایی که در پروژه‌هایم استفاده می‌کنم و با آن‌ها تجربه دارم.
+                </p>
+
+            </div>
+
+
+            <!-- Skills Swiper -->
+            <div class="swiper skills-swiper w-full py-3.5!">
+
+                <div class="swiper-wrapper">
+
+
+                    <!-- Python -->
+                    <div class="swiper-slide h-auto">
+
+                        <div class="group flex min-h-28 w-full flex-col items-center justify-center gap-3 rounded-xl border border-border bg-surface/60 px-4 py-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-surface hover:shadow-lg hover:shadow-primary/10">
+
+                            <div class="flex size-11 items-center justify-center rounded-lg bg-background/70 transition-transform duration-300 group-hover:scale-110">
+
+                                <img src="/static/img/python-svgrepo-com.svg" alt="Python" class="size-7 object-contain" loading="lazy" >
+
+                            </div>
+
+                            <span class="text-sm font-medium text-white transition-colors duration-300 group-hover:text-primary">
+                                Python
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Django -->
+                    <div class="swiper-slide h-auto">
+
+                        <div class="group flex min-h-28 w-full flex-col items-center justify-center gap-3 rounded-xl border border-border bg-surface/60 px-4 py-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-surface hover:shadow-lg hover:shadow-primary/10">
+
+                            <div class="flex size-11 items-center justify-center rounded-lg bg-background/70 transition-transform duration-300 group-hover:scale-110">
+
+                                <img src="/static/img/django-icon.svg" alt="Django" class="size-7 object-contain" loading="lazy" >
+
+                            </div>
+
+                            <span class="text-sm font-medium text-white transition-colors duration-300 group-hover:text-primary">
+                                Django
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DRF -->
+                    <div class="swiper-slide h-auto">
+
+                        <div class="group flex min-h-28 w-full flex-col items-center justify-center gap-3 rounded-xl border border-border bg-surface/60 px-4 py-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-surface hover:shadow-lg hover:shadow-primary/10">
+
+                            <div class="flex size-11 items-center justify-center rounded-lg bg-background/70 transition-transform duration-300 group-hover:scale-110">
+
+                                <img src="https://cdn.simpleicons.org/djangorestframework/FF1709" alt="Django REST Framework" class="size-7 object-contain" loading="lazy">
+
+                            </div>
+
+                            <span class="text-sm font-medium text-white transition-colors duration-300 group-hover:text-primary">
+                                DRF
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- JavaScript -->
+                    <div class="swiper-slide h-auto">
+
+                        <div class="group flex min-h-28 w-full flex-col items-center justify-center gap-3 rounded-xl border border-border bg-surface/60 px-4 py-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-surface hover:shadow-lg hover:shadow-primary/10">
+
+                            <div class="flex size-11 items-center justify-center rounded-lg bg-background/70 transition-transform duration-300 group-hover:scale-110">
+
+                                <img src="/static/img/javascript-icon.svg" alt="JavaScript" class="size-7 object-contain" loading="lazy" >
+
+                            </div>
+
+                            <span class="text-sm font-medium text-white transition-colors duration-300 group-hover:text-primary">
+                                JavaScript
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PostgreSQL -->
+                    <div class="swiper-slide h-auto">
+
+                        <div class="group flex min-h-28 w-full flex-col items-center justify-center gap-3 rounded-xl border border-border bg-surface/60 px-4 py-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-surface hover:shadow-lg hover:shadow-primary/10">
+
+                            <div class="flex size-11 items-center justify-center rounded-lg bg-background/70 transition-transform duration-300 group-hover:scale-110">
+
+                                <img src="/static/img/postgresql-icon.svg" alt="PostgreSQL" class="size-7 object-contain" loading="lazy" >
+
+                            </div>
+
+                            <span class="text-sm font-medium text-white transition-colors duration-300 group-hover:text-primary">
+                                PostgreSQL
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Redis -->
+                    <div class="swiper-slide h-auto">
+
+                        <div class="group flex min-h-28 w-full flex-col items-center justify-center gap-3 rounded-xl border border-border bg-surface/60 px-4 py-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-surface hover:shadow-lg hover:shadow-primary/10">
+
+                            <div class="flex size-11 items-center justify-center rounded-lg bg-background/70 transition-transform duration-300 group-hover:scale-110">
+
+                                <img src="/static/img/redis-icon.svg" alt="Redis" class="size-7 object-contain" loading="lazy" >
+
+                            </div>
+
+                            <span class="text-sm font-medium text-white transition-colors duration-300 group-hover:text-primary">
+                                Redis
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Celery -->
+                    <div class="swiper-slide h-auto">
+
+                        <div class="group flex min-h-28 w-full flex-col items-center justify-center gap-3 rounded-xl border border-border bg-surface/60 px-4 py-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-surface hover:shadow-lg hover:shadow-primary/10">
+
+                            <div class="flex size-11 items-center justify-center rounded-lg bg-background/70 transition-transform duration-300 group-hover:scale-110">
+
+                                <img src="/static/img/celery-icon.svg" alt="Celery" class="size-7 object-contain" loading="lazy" >
+
+                            </div>
+
+                            <span class="text-sm font-medium text-white transition-colors duration-300 group-hover:text-primary">
+                                Celery
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Docker -->
+                    <div class="swiper-slide h-auto">
+
+                        <div class="group flex min-h-28 w-full flex-col items-center justify-center gap-3 rounded-xl border border-border bg-surface/60 px-4 py-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-surface hover:shadow-lg hover:shadow-primary/10">
+
+                            <div class="flex size-11 items-center justify-center rounded-lg bg-background/70 transition-transform duration-300 group-hover:scale-110">
+
+                                <img src="/static/img/docker-icon.svg" alt="Docker" class="size-7 object-contain" loading="lazy" >
+
+                            </div>
+
+                            <span class="text-sm font-medium text-white transition-colors duration-300 group-hover:text-primary">
+                                Docker
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Git -->
+                    <div class="swiper-slide h-auto">
+
+                        <div class="group flex min-h-28 w-full flex-col items-center justify-center gap-3 rounded-xl border border-border bg-surface/60 px-4 py-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-surface hover:shadow-lg hover:shadow-primary/10">
+
+                            <div class="flex size-11 items-center justify-center rounded-lg bg-background/70 transition-transform duration-300 group-hover:scale-110">
+
+                                <img src="/static/img/git-icon.svg" alt="Git" class="size-7 object-contain" loading="lazy" >
+
+                            </div>
+
+                            <span class="text-sm font-medium text-white transition-colors duration-300 group-hover:text-primary">
+                                Git
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+ 
+    <!-- STATS SECTION -->
+    <section class="relative overflow-hidden bg-background px-4 py-0 mb-13.75" dir="rtl">
+
+        <!-- Background glow -->
+        
+
+        <div class="relative mx-auto max-w-6xl">
+
+            <div
+                class="overflow-hidden rounded-2xl border border-border  bg-surface/80 shadow-[0_0_35px_rgba(139,92,246,0.10)] backdrop-blur-md">
+
+                <div class="grid grid-cols-2 md:grid-cols-4">
+
+
+                    <!-- =========================
+                        ITEM 1
+                    ========================== -->
+                    <div class="group relative flex flex-col items-center justify-center px-5 py-8 text-center">
+
+                        <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl border border-primary/30  bg-primary/10  text-primary-light shadow-[0_0_20px_rgba(168,85,247,0.15)] transition duration-300 group-hover:scale-110  group-hover:bg-primary/20">
+
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 6v6l4 2"/>
+                                <circle cx="12" cy="12" r="9" stroke-width="1.8"/>
+                            </svg>
+
+                        </div>
+
+
+                        <span class="counter bg-linear-to-r  from-primary-light  to-primary bg-clip-text text-3xl font-black text-transparent" data-target="2" >
+                            0
+                        </span>
+
+
+                        <span class="mt-2 text-sm text-muted">
+                            سال تجربه
+                        </span>
+
+                    </div>
+
+
+                    <!-- =========================
+                        DIVIDER + ITEM 2
+                    ========================== -->
+                    <div class="relative flex items-center justify-center">
+
+                        <div class="hidden h-16 w-px bg-linear-to-b from-transparent  via-blue/50 to-transparent md:block"></div>
+
+                        <div class="group flex flex-col items-center justify-center px-5 py-8 text-center md:absolute md:inset-0">
+
+                            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl border border-blue/30  bg-blue/10  text-blue shadow-[0_0_20px_rgba(37,99,235,0.15)] transition duration-300 group-hover:scale-110  group-hover:bg-blue/20">
+
+                                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
+                                </svg>
+
+                            </div>
+
+
+                            <span class="counter bg-linear-to-r  from-blue  to-cyan bg-clip-text text-3xl font-black text-transparent" data-target="10" data-suffix="+" >
+                                0
+                            </span>
+                            <span class="mt-2 text-sm text-muted" >
+                                پروژه کامل
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =========================
+                        ITEM 3
+                    ========================== -->
+                    <div class="group relative flex flex-col items-center justify-center px-5 py-8 text-center" >
+
+                        <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl border border-pink/30  bg-pink/10  text-pink shadow-[0_0_20px_rgba(236,72,153,0.15)] transition duration-300 group-hover:scale-110  group-hover:bg-pink/20" >
+
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 13l4 4L19 7"/>
+                            </svg>
+
+                        </div>
+
+
+                        <span class="counter bg-linear-to-r  from-pink  to-primary bg-clip-text text-3xl font-black text-transparent" data-target="100" data-suffix="%" >
+                            0
+                        </span>
+
+
+                        <span class="mt-2 text-sm text-muted" >
+                            تعهد به کیفیت
+                        </span>
+
+                    </div>
+
+
+                    <!-- =========================
+                        ITEM 4
+                    ========================== -->
+                    <div class="group relative flex flex-col items-center justify-center px-5 py-8 text-center" >
+
+                        <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl border border-primary/30  bg-primary/10  text-primary-light shadow-[0_0_20px_rgba(139,92,246,0.15)] transition duration-300 group-hover:scale-110  group-hover:bg-primary/20" >
+
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M20.8 8.9c0 5.5-8.8 10.1-8.8 10.1S3.2 14.4 3.2 8.9A4.9 4.9 0 018.1 4c1.6 0 3.1.8 3.9 2.1A4.6 4.6 0 0115.9 4a4.9 4.9 0 014.9 4.9z" />
+                            </svg>
+
+                        </div>
+
+
+                        <span class="counter bg-linear-to-r  from-pink  to-primary-light bg-clip-text text-3xl font-black text-transparent" data-target="100" data-suffix="%" >
+                            0
+                        </span>
+
+                        <span class="mt-2 text-sm text-muted" >
+                            رضایت مشتری
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="relative overflow-hidden bg-background px-4 pb-8 pt-2" dir="rtl">
+
+        <div class="relative mx-auto max-w-6xl overflow-hidden rounded-2xl border border-border bg-linear-to-r  from-surface  via-surface-light to-[#12091f] shadow-[0_0_45px_rgba(139,92,246,0.12)]" >
+
+            <!-- Decorative glow -->
+            <div class="absolute -right-20 -top-20 h-48 w-48 rounded-full  bg-primary/20 blur-3xl" ></div>
+
+
+            <div class="grid min-h-70 items-center md:grid-cols-2" >
+
+                <!-- =========================
+                    TEXT
+                ========================== -->
+                <div class="relative z-10 px-7 py-12 text-center md:px-12 md:text-right" >
+
+                    <h2 class="text-2xl font-black leading-relaxed text-text md:text-3xl" >
+
+                        برای همکاری در پروژه بعدی شما
+
+                        <span class="bg-linear-to-r  from-blue  via-primary-light  to-pink bg-clip-text text-transparent" >
+                            آماده‌ام!
+                        </span>
+
+                    </h2>
+
+
+                    <p class="mx-auto mt-4 max-w-lg text-sm leading-7 text-muted md:mx-0" >
+                        بیاید ایده‌تون رو با هم به یک تجربه
+                        واقعی و حرفه‌ای تبدیل کنیم.
+                    </p>
+
+
+                    <a href="#contact" class="group mt-7 inline-flex items-center gap-3 rounded-xl bg-linear-to-r  from-blue  to-primary px-7 py-3.5 text-sm font-bold  text-text shadow-[0_0_25px_rgba(37,99,235,0.25)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_0_35px_rgba(139,92,246,0.40)]" >
+
+                        تماس با من
+
+                        <svg class="h-5 w-5 transition duration-300 group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" >
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 6l6 6-6 6" />
+                        </svg>
+
+                    </a>
+
+                </div>
+
+
+                <!-- =========================
+                    IMAGE
+                ========================== -->
+                <div class="relative h-full min-h-65 overflow-hidden" >
+
+                    <!-- Dark overlay -->
+                    <div class="absolute inset-0 z-10 bg-linear-to-l from-transparent  via-background/20  to-background/80" ></div>
+
+
+                    <img src="https://www.epochstudio.net/images/AppWebDev.jpg" alt="محیط برنامه نویسی" class="h-full w-full object-cover opacity-80 transition duration-700 hover:scale-105" >
+
+
+                    <!-- Blue glow -->
+                    <div class="absolute inset-0  bg-blue/10 mix-blend-screen" ></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    
+</main>
 
 {% endblock content %}
 
