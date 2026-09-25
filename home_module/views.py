@@ -13,3 +13,5 @@ def footer_partial(request):
 
 def about_me(request):
     return render(request, 'home_module/about_me.html')
+def project_list(request):
+    return render(request, 'home_module/project_list.html')
