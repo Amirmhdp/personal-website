@@ -210,3 +210,52 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(element);
     });
 });
+
+function getCookie(name) {
+    let cookieValue = null;
+
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+
+        for (let cookie of cookies) {
+            cookie = cookie.trim();
+
+            if (cookie.startsWith(name + '=')) {
+                cookieValue = decodeURIComponent(
+                    cookie.substring(name.length + 1)
+                );
+
+                break;
+            }
+        }
+    }
+
+    return cookieValue;
+}
+
+document.addEventListener('click', (event) => {
+    const gallery = event.target.closest('.galleries');
+
+    if (!gallery) return;
+
+    const image_id = gallery.dataset.imgId;
+
+    async function changeImgGallery(image_id) {
+        const mainImg = document.getElementById('img-id');
+        const csrfToken = getCookie('csrftoken');
+        const response = await fetch('/change-img/' + image_id, {
+            method: 'POST',
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRFToken': csrfToken,
+            },
+        });
+
+        const result = await response.json();
+
+        mainImg.src = result.src;
+    }
+
+    changeImgGallery(image_id);
+});
+

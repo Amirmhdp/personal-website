@@ -65,7 +65,7 @@
 
                   <!-- Actions -->
                   <div class="mt-6 flex items-center justify-between border-t border-border pt-4">
-                    <a href="#" class="group/link flex items-center gap-2 text-sm font-medium text-primary transition-colors duration-300 hover:text-blue">
+                    <a href="{% url 'project_detail_page' pk=project.id title=project.title %}" class="group/link flex items-center gap-2 text-sm font-medium text-primary transition-colors duration-300 hover:text-blue">
                       <span>مشاهده جزئیات</span>
 
                       <span class="transition-transform duration-300 group-hover/link:-translate-x-1">←</span>

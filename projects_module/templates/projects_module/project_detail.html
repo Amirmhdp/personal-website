@@ -1,5 +1,5 @@
 {% extends 'shared/layout.html' %}
-
+{% load poll_extras %}
 {% block title %}
   جزئیات محصول
 {% endblock %}
@@ -15,18 +15,14 @@
           <div class="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-primary/10 blur-3xl"></div>
 
           <div class="relative overflow-hidden rounded-xl border border-border bg-background">
-            <img src="/static/img/newkala.webp" alt="فروشگاه اینترنتی نیکولا" class="aspect-16/10 w-full object-cover" />
+            <img id="img-id" data-img-id="{{ project.id }}" src="{{ project.image.url }}" alt="{{ project.title }}" class="aspect-16/10 w-full object-cover" />
           </div>
 
           <!-- Gallery -->
           <div class="mt-3 grid grid-cols-4 gap-2">
-            <button class="overflow-hidden rounded-lg border border-primary bg-surface"><img src="/images/nicola-store.png" class="aspect-video w-full object-cover" alt="" /></button>
-
-            <button class="rounded-lg border border-border bg-surface-light opacity-70 transition hover:opacity-100"><div class="aspect-video"></div></button>
-
-            <button class="rounded-lg border border-border bg-surface-light opacity-70 transition hover:opacity-100"><div class="aspect-video"></div></button>
-
-            <button class="rounded-lg border border-border bg-surface-light opacity-70 transition hover:opacity-100"><div class="aspect-video"></div></button>
+                {% for gallery in galleries %}
+                    <button class="overflow-hidden rounded-lg border border-primary bg-surface"><img data-img-id="{{ gallery.id }}" src="{{ gallery.image.url }}" class="aspect-video w-full object-cover galleries" alt="{{ gallery.title }}" /></button>
+                {% endfor %}
           </div>
         </div>
       </div>
@@ -36,29 +32,17 @@
         <span class="inline-flex rounded-lg border border-primary/20 bg-primary/10 px-3 py-1.5 text-[11px] font-semibold text-primary-light">پروژه کامل</span>
 
         <h1 class="mt-5 text-3xl font-bold leading-[1.7] tracking-tight text-white sm:text-4xl lg:text-[42px]">
-          فروشگاه اینترنتی
-          <span class="bg-linear-to-l from-primary-light via-primary to-blue bg-clip-text text-transparent">نیکولا</span>
+          {{ project.title }}
         </h1>
 
-        <p class="mt-4 max-w-xl text-sm leading-8 text-muted">یک فروشگاه اینترنتی کامل است که با هدف ارائه تجربه خرید سریع، ساده و حرفه‌ای طراحی شده است. این پروژه شامل پنل مدیریت، سیستم پرداخت، جستجوی پیشرفته و امکانات کامل فروشگاهی می‌باشد.</p>
+        <p class="mt-4 max-w-xl text-sm leading-8 text-muted">{{ project.description }}</p>
 
         <!-- Technologies -->
         <div class="mt-7 flex flex-wrap gap-2">
-          <span class="rounded-lg border border-border bg-surface px-3 py-2 text-[11px] text-slate-300">Django</span>
+            {% for skill in project.skill.all %}
+                <span class="rounded-lg border border-border bg-surface px-3 py-2 text-[11px] text-slate-300">{{ skill.title }}</span>
+            {% endfor %}
 
-          <span class="rounded-lg border border-border bg-surface px-3 py-2 text-[11px] text-slate-300">DRF</span>
-
-          <span class="rounded-lg border border-border bg-surface px-3 py-2 text-[11px] text-slate-300">PostgreSQL</span>
-
-          <span class="rounded-lg border border-border bg-surface px-3 py-2 text-[11px] text-slate-300">Redis</span>
-
-          <span class="rounded-lg border border-border bg-surface px-3 py-2 text-[11px] text-slate-300">Tailwind CSS</span>
-
-          <span class="rounded-lg border border-border bg-surface px-3 py-2 text-[11px] text-slate-300">JavaScript</span>
-
-          <span class="rounded-lg border border-border bg-surface px-3 py-2 text-[11px] text-slate-300">HTMX</span>
-
-          <span class="rounded-lg border border-border bg-surface px-3 py-2 text-[11px] text-slate-300">Docker</span>
         </div>
 
         <!-- Button -->
@@ -73,69 +57,15 @@
     <section class="mt-12">
       <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <!-- Feature -->
-        <div class="group rounded-xl border border-border bg-surface p-5 transition hover:-translate-y-1 hover:border-primary/30 duration-300">
-          <i data-lucide="badge-percent" class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-primary/20 bg-primary/10 text-xl text-primary-light"></i>
+        {% for feature in project_features %}
+            <div class="group rounded-xl border border-border bg-surface p-5 transition hover:-translate-y-1 {% if forloop.counter0|divisibleby:2 %} hover:border-primary/50 hover:shadow-primary/10 {% else %} hover:border-cyan-400/40 hover:shadow-cyan-500/10 {% endif %} duration-300">
+              <i data-lucide="{{ feature.icon_name }}" class="mb-4 p-1.5 flex h-11 w-11 items-center justify-center rounded-xl border {% if forloop.counter0|divisibleby:2 %} border-primary/20 bg-primary/10 text-primary-light {% else %} border-cyan/20 bg-cyan/10 text-cyan {% endif %}  text-xl "></i>
 
-          <h3 class="text-sm font-bold text-white">سیستم تخفیف هوشمند</h3>
+              <h3 class="text-sm font-bold text-white">{{ feature.title }}</h3>
 
-          <p class="mt-2 text-[11px] leading-6 text-muted">پشتیبانی از کد تخفیف، تخفیف گروهی و تخفیف‌های زمان‌دار</p>
-        </div>
-
-        <div class="group rounded-xl border border-border bg-surface p-5 transition hover:-translate-y-1 hover:border-cyan/30 duration-300">
-          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-cyan/20 bg-cyan/10 text-xl text-cyan">◈</div>
-
-          <h3 class="text-sm font-bold text-white">درگاه پرداخت امن</h3>
-
-          <p class="mt-2 text-[11px] leading-6 text-muted">اتصال به درگاه‌های معتبر و پرداخت آنلاین امن</p>
-        </div>
-
-        <div class="group rounded-xl border border-border bg-surface p-5 transition hover:-translate-y-1 hover:border-primary/30 duration-300">
-          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-primary/20 bg-primary/10 text-xl text-primary-light">♙</div>
-
-          <h3 class="text-sm font-bold text-white">پنل مدیریت کامل</h3>
-
-          <p class="mt-2 text-[11px] leading-6 text-muted">مدیریت محصولات، سفارش‌ها و کاربران</p>
-        </div>
-
-        <div class="group rounded-xl border border-border bg-surface p-5 transition hover:-translate-y-1 hover:border-pink/30 duration-300">
-          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-pink/20 bg-pink/10 text-xl text-pink">▦</div>
-
-          <h3 class="text-sm font-bold text-white">سیستم تخفیف هوشمند</h3>
-
-          <p class="mt-2 text-[11px] leading-6 text-muted">پشتیبانی از تخفیف‌های گروهی و زمان‌دار</p>
-        </div>
-
-        <div class="group rounded-xl border border-border bg-surface p-5 transition hover:-translate-y-1 hover:border-primary/30 duration-300">
-          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-primary/20 bg-primary/10 text-xl text-primary-light">⌕</div>
-
-          <h3 class="text-sm font-bold text-white">جستجوی پیشرفته</h3>
-
-          <p class="mt-2 text-[11px] leading-6 text-muted">جستجوی سریع محصولات با فیلترهای متنوع</p>
-        </div>
-
-        <div class="group rounded-xl border border-border bg-surface p-5 transition hover:-translate-y-1 hover:border-cyan/30 duration-300">
-          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-cyan/20 bg-cyan/10 text-xl text-cyan">▣</div>
-
-          <h3 class="text-sm font-bold text-white">طراحی ریسپانسیو</h3>
-
-          <p class="mt-2 text-[11px] leading-6 text-muted">طراحی کاملاً واکنش‌گرا برای موبایل و دسکتاپ</p>
-        </div>
-
-        <div class="group rounded-xl border border-border bg-surface p-5 transition hover:-translate-y-1 hover:border-blue/30 duration-300">
-          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-blue/20 bg-blue/10 text-xl text-blue">≋</div>
-
-          <h3 class="text-sm font-bold text-white">عملکرد بالا</h3>
-
-          <p class="mt-2 text-[11px] leading-6 text-muted">بهینه‌سازی شده برای سرعت بالا و تجربه کاربری عالی</p>
-        </div>
-
-        <div class="group rounded-xl border border-border bg-surface p-5 transition hover:-translate-y-1 hover:border-primary/30 duration-300">
-          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl border border-primary/20 bg-primary/10 text-xl text-primary-light">◈</div>
-
-          <h3 class="text-sm font-bold text-white">امنیت بالا</h3>
-
-          <p class="mt-2 text-[11px] leading-6 text-muted">استفاده از بهترین روش‌های امنیتی برای محافظت از اطلاعات</p>
-        </div>
+              <p class="mt-2 text-[11px] leading-6 text-muted">{{ feature.description }}</p>
+            </div>
+        {% endfor %}
       </div>
     </section>
 
@@ -160,22 +90,11 @@
             <div class="space-y-4">
               <div class="flex justify-between text-xs">
                 <span class="text-muted text-[13px]">تعداد کاربران</span>
-                <span class="text-white text-[13px]">+۱۰۰۰</span>
+                <span class="text-white text-[13px]">+300</span>
               </div>
-
-              <div class="flex justify-between text-xs">
-                <span class="text-muted text-[13px]">تعداد محصولات</span>
-                <span class="text-white text-[13px]">+۵۰۰</span>
-              </div>
-
-              <div class="flex justify-between text-xs">
-                <span class="text-muted text-[13px]">تعداد سفارشات</span>
-                <span class="text-white text-[13px]">+۲۰۰۰</span>
-              </div>
-
               <div class="flex justify-between text-xs">
                 <span class="text-muted text-[13px]">تعداد بازدید</span>
-                <span class="text-white text-[13px]">+۵۰۰۰</span>
+                <span class="text-white text-[13px]">+500</span>
               </div>
             </div>
           </div>
@@ -185,38 +104,13 @@
             <h3 class="mb-5 text-xs font-bold text-primary-light">تکنولوژی‌های استفاده شده</h3>
 
             <div class="flex flex-wrap gap-2">
-              <span class="flex items-center gap-2 rounded-lg bg-surface px-3 py-2 text-[13px] text-slate-300">
-                <img src="/static/img/django-icon.svg" class="w-5" alt="">
-                Django
-            </span>
+                {% for skill in project.skill.all %}
+                    <span class="flex items-center gap-2 rounded-lg bg-surface px-3 py-2 text-[13px] text-slate-300">
+                        <img src="{{ skill.image.url }}" class="w-5" alt="{{ skill.title }}">
+                        {{ skill.title }}
+                    </span>
+                {% endfor %}
 
-              <span class="flex items-center gap-2 rounded-lg bg-surface px-3 py-2 text-[13px] text-slate-300">
-                <img src="/static/img/django-icon.svg" class="w-5" alt="">
-                Django REST
-            </span>
-
-              <span class="flex items-center gap-2 rounded-lg bg-surface px-3 py-2 text-[13px] text-slate-300">
-                
-                <img src="/static/img/redis-icon.svg" class="w-5" alt="">
-                
-                Redis
-            </span>
-
-              <span class="flex items-center gap-2 rounded-lg bg-surface px-3 py-2 text-[13px] text-slate-300">
-                <img src="/static/img/django-icon.svg" class="w-5" alt="">
-                Tailwind CSS
-            </span>
-
-              <span class="flex items-center gap-2 rounded-lg bg-surface px-3 py-2 text-[13px] text-slate-300">
-                <img src="/static/img/javascript-icon.svg" class="w-5" alt="">
-                JavaScript
-            </span>
-
-
-              <span class="flex items-center gap-2 rounded-lg bg-surface px-3 py-2 text-[13px] text-slate-300">
-                <img src="/static/img/docker-icon.svg" class="w-5" alt="">
-                Docker
-            </span>
             </div>
           </div>
 
@@ -225,27 +119,23 @@
             <div class="grid grid-cols-2 gap-5">
               <div>
                 <span class="text-[10px] text-slate-600">تاریخ شروع</span>
-                <div class="mt-2 text-xs text-white">اردیبهشت ۱۴۰۴</div>
+                <div class="mt-2 text-xs text-white">{{ project.start_date|to_jalali }}</div>
               </div>
 
               <div>
                 <span class="text-[10px] text-slate-600">تاریخ تکمیل</span>
-                <div class="mt-2 text-xs text-white">تیر ۱۴۰۴</div>
+                <div class="mt-2 text-xs text-white">{{ project.end_date|to_jalali }}</div>
               </div>
+              {% if project.is_completed %}
+                  <div>
+                    <span class="text-[10px] text-slate-600">وضعیت</span>
 
-              <div>
-                <span class="text-[10px] text-slate-600">مدت زمان</span>
-                <div class="mt-2 text-xs text-white">۲ ماه</div>
-              </div>
-
-              <div>
-                <span class="text-[10px] text-slate-600">وضعیت</span>
-
-                <div class="mt-2 flex items-center gap-2 text-xs text-emerald-400">
-                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-                  تکمیل شده
-                </div>
-              </div>
+                    <div class="mt-2 flex items-center gap-2 text-xs text-emerald-400">
+                      <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                      تکمیل شده
+                    </div>
+                  </div>
+              {% endif %}
             </div>
           </div>
         </div>
@@ -263,25 +153,14 @@
         </div>
 
         <ul class="space-y-4 text-xs leading-6 text-muted">
-          <li class="flex gap-3">
-            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-light text-[13px]"></span>
-            مدیریت سبد خرید در حالت همزمان
-          </li>
+          {% for challenge in challenges %}
+              <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-light text-[13px]"></span>
+                {{ challenge.challenge }}
+              </li>
+          {% endfor %}
 
-          <li class="flex gap-3">
-            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-light text-[13px]"></span>
-            بهینه‌سازی عملکرد در دیتای زیاد
-          </li>
 
-          <li class="flex gap-3">
-            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-light text-[13px]"></span>
-            پیاده‌سازی سیستم تخفیف پیچیده
-          </li>
-
-          <li class="flex gap-3">
-            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-light text-[13px]"></span>
-            امنیت درگاه پرداخت
-          </li>
         </ul>
       </div>
 
@@ -294,25 +173,13 @@
         </div>
 
         <ul class="space-y-4 text-xs leading-6 text-muted">
-          <li class="flex gap-3">
-            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan text-[13px]"></span>
-            استفاده از Redis برای مدیریت سشن‌ها
-          </li>
+          {% for challenge in challenges %}
+            <li class="flex gap-3">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan text-[13px]"></span>
+                {{ challenge.solution }}
+            </li>
+          {% endfor %}
 
-          <li class="flex gap-3">
-            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan text-[13px]"></span>
-            ایندکس‌گذاری دیتابیس
-          </li>
-
-          <li class="flex gap-3">
-            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan text-[13px]"></span>
-            طراحی سیستم تخفیف ماژولار
-          </li>
-
-          <li class="flex gap-3">
-            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan text-[13px]"></span>
-            پیاده‌سازی فیلترهای امن Django
-          </li>
         </ul>
       </div>
     </section>

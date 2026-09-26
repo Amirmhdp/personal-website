@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'projects_module',
     'order_module',
     'contact_module',
+    'polls',
     'django_render_partial',
 ]
 
