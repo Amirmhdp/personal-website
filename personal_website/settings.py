@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home_module',
+    'projects_module',
+    'order_module',
     'django_render_partial',
 ]
 
