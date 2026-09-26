@@ -16,3 +16,6 @@ def about_me(request):
 
 def sevices(request):
     return render(request, 'home_module/services.html')
+
+def skills(request):
+    return render(request, 'home_module/skills.html')
