@@ -1,0 +1,331 @@
+{% extends 'shared/layout.html' %}
+{% load static %}
+{% block title %}
+  تماس با من
+{% endblock %}
+
+{% block content %}
+ 
+
+  <main id="contact" dir="rtl" class="relative overflow-hidden bg-background py-16 text-text sm:py-20 lg:py-24">
+    <!--  =====================================================
+         BACKGROUND GLOW
+    ======================================================  -->
+
+    <div class="pointer-events-none absolute inset-0 overflow-hidden">
+      <!-- Right glow -->
+      <div class="absolute -right-40 top-24 h-96 w-96 rounded-full bg-primary/10 blur-[140px]"></div>
+
+      <!-- Left glow -->
+      <div class="absolute -left-40 top-[30%] h-96 w-96 rounded-full bg-blue/10 blur-[150px]"></div>
+
+      <!-- Center glow -->
+      <div class="absolute left-1/2 top-[45%] h-72 w-72 -translate-x-1/2 rounded-full bg-primary/5 blur-[130px]"></div>
+    </div>
+
+    <!--  =====================================================
+         MAIN CONTAINER
+    ======================================================  -->
+
+    <div class="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <!--  =================================================
+             HERO
+        ==================================================  -->
+
+      <section class="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+        <!-- HERO TEXT -->
+        <div class="order-2 lg:order-1">
+          <!-- Badge -->
+
+          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan/30 bg-cyan/5 px-4 py-2 text-xs font-medium text-cyan">
+            <i data-lucide="send" class="h-3.5 w-3.5"></i>
+
+            تماس با من
+          </div>
+
+          <!-- Heading -->
+
+          <h1 class="text-[30px] font-black leading-[1.45] tracking-tight  lg:text-[32px]">
+            با من در
+
+            <span class="bg-linear-to-l from-primary-light via-primary to-blue bg-clip-text text-transparent">ارتباط</span>
+
+            باشید
+          </h1>
+
+          <!-- Description -->
+
+          <p class="mt-5 max-w-xl text-sm leading-8 text-muted sm:text-base">اگر سوالی دارید، پروژه‌ای در ذهن دارید یا می‌خواهید همکاری کنیم، خوشحال می‌شوم با شما در ارتباط باشم. از طریق راه‌های زیر می‌توانید با من تماس بگیرید یا پیام خود را ارسال کنید.</p>
+        </div>
+
+        <!-- HERO IMAGE -->
+        <div class="order-1 relative mx-auto w-full max-w-xl lg:order-2">
+          <!-- Glow -->
+
+          <div class="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 blur-[100px] sm:h-80 sm:w-80"></div>
+
+          <!-- Image -->
+
+          <img src="{% static 'img/hero-contact.webp' %}" alt="تماس با من" class="relative z-10 mx-auto w-full object-contain drop-shadow-[0_0_45px_rgba(139,92,246,0.25)]" />
+        </div>
+      </section>
+
+      <!--  =================================================
+             CONTACT INFO CARDS
+        ==================================================  -->
+
+      <section class="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <!-- Working Hours -->
+
+        <div class="group rounded-xl border border-border bg-surface/40 p-5 text-center backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-primary/40">
+          <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-blue/20 bg-blue/10 text-blue">
+            <i data-lucide="clock-3" class="h-6 w-6"></i>
+          </div>
+
+          <h3 class="mt-4 text-sm font-bold">ساعات کاری</h3>
+
+          <p class="mt-2 text-xs leading-6 text-muted">
+            شنبه تا پنجشنبه
+            <br />
+            ۹ صبح تا ۶ عصر
+          </p>
+        </div>
+
+        <!-- Email -->
+
+        <div class="group rounded-xl border border-border bg-surface/40 p-5 text-center backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-primary/40">
+          <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-primary/20 bg-primary/10 text-primary">
+            <i data-lucide="mail" class="h-6 w-6"></i>
+          </div>
+
+          <h3 class="mt-4 text-sm font-bold">ایمیل</h3>
+
+          <p class="mt-2 text-xs leading-6 text-muted">
+            amir@example.com
+            <br />
+            در کمترین زمان پاسخ می‌دهم
+          </p>
+        </div>
+
+        <!-- Phone -->
+
+        <div class="group rounded-xl border border-border bg-surface/40 p-5 text-center backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-primary/40">
+          <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-blue/20 bg-blue/10 text-blue">
+            <i data-lucide="phone" class="h-6 w-6"></i>
+          </div>
+
+          <h3 class="mt-4 text-sm font-bold">تلفن</h3>
+
+          <p class="mt-2 text-xs leading-6 text-muted">
+            +98 912 345 6789
+            <br />
+            پاسخگویی در ساعات کاری
+          </p>
+        </div>
+
+        <!-- Address -->
+
+        <div class="group rounded-xl border border-border bg-surface/40 p-5 text-center backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-primary/40">
+          <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-cyan/20 bg-cyan/10 text-cyan">
+            <i data-lucide="map-pin" class="h-6 w-6"></i>
+          </div>
+
+          <h3 class="mt-4 text-sm font-bold">آدرس</h3>
+
+          <p class="mt-2 text-xs leading-6 text-muted">
+            تهران، ایران
+            <br />
+            محدوده تجریش، خیابان ولیعصر
+          </p>
+        </div>
+      </section>
+
+      <!--  =================================================
+             CONTACT FORM + SIDE INFO
+        ==================================================  -->
+
+      <section class="mt-6 grid gap-5 lg:grid-cols-[1fr_2fr]">
+        <!-- SIDE CONTACT INFO -->
+           
+        <aside class="order-2 rounded-2xl border border-border bg-surface/40 p-5 sm:p-6 lg:order-1">
+          <!-- Heading -->
+
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <i data-lucide="message-circle" class="h-5 w-5"></i>
+            </div>
+
+            <h2 class="text-lg font-bold">بیایید صحبت کنیم</h2>
+          </div>
+
+          <p class="mt-5 text-xs leading-8 text-muted">من همیشه آماده‌ام تا به سوالات شما پاسخ دهم و در پروژه‌های جدید با شما همکاری کنم. منتظر پیام شما هستم!</p>
+
+          <!-- Side Items -->
+
+          <div class="mt-7 space-y-4">
+            <!-- Fast Response -->
+
+            <div class="rounded-xl border border-primary/20 bg-background/40 p-4 transition hover:border-primary/40">
+              <div class="flex items-start gap-3">
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <i data-lucide="zap" class="h-5 w-5"></i>
+                </div>
+
+                <div>
+                  <h3 class="text-sm font-bold">پاسخ سریع</h3>
+
+                  <p class="mt-1 text-[11px] leading-6 text-muted">در کمترین زمان ممکن پاسخ می‌دهم.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Free Consultation -->
+
+            <div class="rounded-xl border border-border bg-background/40 p-4 transition hover:border-primary/40">
+              <div class="flex items-start gap-3">
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <i data-lucide="message-square" class="h-5 w-5"></i>
+                </div>
+
+                <div>
+                  <h3 class="text-sm font-bold">مشاوره رایگان</h3>
+
+                  <p class="mt-1 text-[11px] leading-6 text-muted">قبل از شروع پروژه مشاوره رایگان دریافت کنید.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Long Term -->
+
+            <div class="rounded-xl border border-border bg-background/40 p-4 transition hover:border-primary/40">
+              <div class="flex items-start gap-3">
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <i data-lucide="users" class="h-5 w-5"></i>
+                </div>
+
+                <div>
+                  <h3 class="text-sm font-bold">همکاری بلندمدت</h3>
+
+                  <p class="mt-1 text-[11px] leading-6 text-muted">برای پروژه‌های بزرگ و ماندگار.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- CONTACT FORM -->
+        <div class="order-1 rounded-2xl border border-border bg-surface/40 p-5 sm:p-6 lg:order-2">
+          <!-- Form Header -->
+
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-cyan/10 text-cyan">
+              <i data-lucide="send" class="h-5 w-5"></i>
+            </div>
+
+            <div>
+              <h2 class="text-lg font-bold">ارسال پیام</h2>
+
+              <p class="mt-1 text-xs text-muted">پیام خود را از طریق فرم زیر برای من ارسال کنید.</p>
+            </div>
+          </div>
+
+          <!-- Form -->
+
+          <form action="#" method="POST" class="mt-7">
+            <!-- Name + Email -->
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <!-- Name -->
+
+              <div>
+                <label for="name" class="mb-2 block text-xs font-medium">
+                  نام و نام خانوادگی
+                  <span class="text-primary">*</span>
+                </label>
+
+                <div class="relative">
+                  <i data-lucide="user-round" class="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted"></i>
+
+                  <input id="name" name="name" type="text" placeholder="مثال: علی رضایی" class="h-12 w-full rounded-xl border border-border bg-background/60 pr-10 pl-4 text-xs text-text outline-none transition placeholder:text-muted/60 focus:border-primary focus:ring-2 focus:ring-primary/10" />
+                </div>
+              </div>
+
+              <!-- Email -->
+
+              <div>
+                <label for="email" class="mb-2 block text-xs font-medium">
+                  ایمیل
+                  <span class="text-primary">*</span>
+                </label>
+
+                <div class="relative">
+                  <i data-lucide="mail" class="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted"></i>
+
+                  <input id="email" name="email" type="email" placeholder="example@gmail.com" class="h-12 w-full rounded-xl border border-border bg-background/60 pr-10 pl-4 text-xs text-text outline-none transition placeholder:text-muted/60 focus:border-primary focus:ring-2 focus:ring-primary/10" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Subject -->
+
+            <div class="mt-4">
+              <label for="subject" class="mb-2 block text-xs font-medium">
+                موضوع
+                <span class="text-primary">*</span>
+              </label>
+
+              <div class="relative">
+                <i data-lucide="chevron-down" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted"></i>
+
+                <select id="subject" name="subject" class="h-12 w-full appearance-none rounded-xl border border-border bg-background/60 px-4 text-xs text-muted outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10">
+                  <option value="">انتخاب موضوع</option>
+
+                  <option value="project">سفارش طراحی سایت</option>
+
+                  <option value="development">توسعه پروژه</option>
+
+                  <option value="consultation">مشاوره</option>
+
+                  <option value="other">سایر موارد</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Message -->
+
+            <div class="mt-4">
+              <label for="message" class="mb-2 block text-xs font-medium">
+                پیام شما
+                <span class="text-primary">*</span>
+              </label>
+
+              <div class="relative">
+                <i data-lucide="message-square" class="pointer-events-none absolute right-3 top-4 h-4 w-4 text-muted"></i>
+
+                <textarea id="message" name="message" rows="6" placeholder="متن پیام خود را بنویسید..." class="w-full resize-none rounded-xl border border-border bg-background/60 py-3 pr-10 pl-4 text-xs leading-7 text-text outline-none transition placeholder:text-muted/60 focus:border-primary focus:ring-2 focus:ring-primary/10"></textarea>
+              </div>
+            </div>
+
+            <!-- Submit -->
+
+            <button type="submit" class="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-linear-to-l from-primary via-primary-light to-blue text-sm font-bold text-white shadow-[0_0_25px_rgba(139,92,246,0.15)] transition duration-300 hover:scale-[1.01] hover:shadow-[0_0_35px_rgba(139,92,246,0.25)] active:scale-[0.99]">
+              <span>ارسال پیام</span>
+
+              <i data-lucide="send" class="h-4 w-4"></i>
+            </button>
+          </form>
+        </div>
+      </section>
+
+
+    </div>
+  </main>
+
+  {% block footer_references %}
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      lucide.createIcons()
+    </script>
+  {% endblock %}
+{% endblock %}
