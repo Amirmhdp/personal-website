@@ -1,346 +1,163 @@
 <header class="sticky top-4 z-50 px-4">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-border/80 bg-surface/80 px-5 py-3 shadow-2xl shadow-black/20 backdrop-blur-xl">
+    <button type="button" id="mobile-menu-button" aria-label="باز کردن منو" aria-expanded="false" class="group flex size-10 items-center justify-center rounded-xl border border-border bg-background/60 transition-all duration-300 hover:border-primary/60 hover:bg-primary/10 lg:hidden">
+      <svg id="menu-icon" class="size-5 text-muted transition-all duration-300 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <!-- Logo / Brand -->
+    <a href="#" class="group flex shrink-0 items-center gap-3">
+      <!-- Logo -->
+      <div class="relative flex size-11 items-center justify-center rounded-xl border border-border bg-background transition-all duration-300 group-hover:border-primary/60 group-hover:shadow-lg group-hover:shadow-primary/20">
+        <div class="absolute inset-0 rounded-xl bg-primary/10 blur-xl transition-opacity duration-300 group-hover:bg-primary/20"></div>
 
-    <nav class="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-border/80  bg-surface/80 px-5 py-3 shadow-2xl shadow-black/20 backdrop-blur-xl">
-        <button
-    type="button"
-    id="mobile-menu-button"
-    aria-label="باز کردن منو"
-    aria-expanded="false"
-    class="group flex size-10 items-center justify-center
-           rounded-xl border border-border
-           bg-background/60
-           transition-all duration-300
-           hover:border-primary/60
-           hover:bg-primary/10
-           lg:hidden">
+        <img class="relative size-7" src="/static/img/code-2-svgrepo-com.svg" alt="code icon" />
+      </div>
 
-    <svg
-        id="menu-icon"
-        class="size-5 text-muted transition-all duration-300 group-hover:text-white"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        stroke-width="2">
+      <!-- Name -->
+      <div class="flex flex-col justify-center leading-tight">
+        <span class="text-base font-bold text-white">امیر</span>
 
-        <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M4 6h16M4 12h16M4 18h16" />
+        <span class="mt-1 text-xs text-muted">توسعه دهنده وب</span>
+      </div>
+    </a>
 
-    </svg>
-
-</button>
-        <!-- Logo / Brand -->
-        <a href="#" class="group flex shrink-0 items-center gap-3">
-
-            <!-- Logo -->
-            <div class="relative flex size-11 items-center justify-center rounded-xl border border-border  bg-background transition-all duration-300  group-hover:border-primary/60 group-hover:shadow-lg group-hover:shadow-primary/20">
-
-                <div class="absolute inset-0 rounded-xl bg-primary/10 blur-xl transition-opacity duration-300  group-hover:bg-primary/20">
-                </div>
-
-                <img class="relative size-7" src="/static/img/code-2-svgrepo-com.svg" alt="code icon">
-            </div>
-
-            <!-- Name -->
-            <div class="flex flex-col justify-center leading-tight">
-                <span class="text-base font-bold text-white">
-                    امیر
-                </span>
-
-                <span class="mt-1 text-xs text-muted">
-                    توسعه دهنده وب
-                </span>
-            </div>
-
+    <!-- Navigation -->
+    <ul class="hidden items-center gap-8 lg:flex">
+      <!-- Active -->
+      <li>
+        <a href="{% url 'home' %}" class="group relative inline-block py-2 text-sm font-medium text-white">
+          خانه
+          <span class="absolute bottom-0 right-0 h-0.5 w-full rounded-full bg-linear-to-l from-primary to-blue shadow-[0_0_10px_rgba(139,92,246,0.5)]"></span>
         </a>
+      </li>
 
-        <!-- Navigation -->
-        <ul class="hidden items-center gap-8 lg:flex">
+      <!-- Navigation item -->
+      <li>
+        <a href="{% url 'about_me_page' %}" class="group relative inline-block py-2 text-sm font-medium text-muted transition-colors duration-300 hover:text-white">
+          درباره من
+          <span class="absolute bottom-0 right-0 h-0.5 w-0 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]"></span>
+        </a>
+      </li>
 
-            <!-- Active -->
-            <li>
-                <a href="#" class="group relative inline-block py-2 text-sm font-medium text-white">
+      <li>
+        <a href="{% url 'project_list_page' %}" class="group relative inline-block py-2 text-sm font-medium text-muted transition-colors duration-300 hover:text-white">
+          پروژه ها
 
-                    خانه
-                    <span class="absolute bottom-0 right-0 h-0.5 w-full rounded-full bg-linear-to-l from-primary to-blue shadow-[0_0_10px_rgba(139,92,246,0.5)]">
-                    </span>
-                </a>
-            </li>
+          <span class="absolute bottom-0 right-0 h-0.5 w-0 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </li>
 
+      <li>
+        <a href="{% url 'services_page' %}" class="group relative inline-block py-2 text-sm font-medium text-muted transition-colors duration-300 hover:text-white">
+          خدمات
 
-            <!-- Navigation item -->
-            <li>
-                <a href="#" class="group relative inline-block py-2 text-sm font-medium text-muted transition-colors duration-300  hover:text-white">
-                    درباره من
-                    <span class="absolute bottom-0 right-0 h-0.5 w-0 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]">
-                    </span>
-                </a>
-            </li>
+          <span class="absolute bottom-0 right-0 h-0.5 w-0 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </li>
 
+      <li>
+        <a href="{% url 'skills_page' %}" class="group relative inline-block py-2 text-sm font-medium text-muted transition-colors duration-300 hover:text-white">
+          مهارت ها
 
-            <li>
-                <a href="#" class="group relative inline-block py-2 text-sm font-medium text-muted transition-colors duration-300  hover:text-white">
+          <span class="absolute bottom-0 right-0 h-0.5 w-0 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </li>
 
-                    پروژه ها
+      <li>
+        <a href="{% url 'order_page' %}" class="group relative inline-block py-2 text-sm font-medium text-muted transition-colors duration-300 hover:text-white">
+          ثبت سفارش
 
-                    <span class="absolute bottom-0 right-0 h-0.5 w-0 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300 group-hover:w-full">
-                    </span>
-                </a>
-            </li>
+          <span class="absolute bottom-0 right-0 h-0.5 w-0 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </li>
 
+      <li>
+        <a href="{% url 'contact_me_page' %}" class="group relative inline-block py-2 text-sm font-medium text-muted transition-colors duration-300 hover:text-white">
+          تماس با من
 
-            <li>
-                <a href="#" class="group relative inline-block py-2 text-sm font-medium text-muted transition-colors duration-300  hover:text-white">
+          <span class="absolute bottom-0 right-0 h-0.5 w-0 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </li>
+    </ul>
+    <!-- Mobile Menu Button -->
 
-                    خدمات
+    <!-- Social Links -->
+    <div class="flex items-center gap-2">
+      <!-- Instagram -->
+      <a href="#" aria-label="Instagram" class="group flex size-10 items-center justify-center rounded-xl border border-border bg-background/60 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/60 hover:bg-linear-to-br hover:from-primary hover:to-blue hover:shadow-lg hover:shadow-primary/20">
+        <svg class="size-4.5 fill-muted transition-all duration-300 group-hover:fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7.03.084c-1.277.06-2.149.264-2.91.563a5.9 5.9 0 0 0-2.124 1.388a5.9 5.9 0 0 0-1.38 2.127C.321 4.926.12 5.8.064 7.076s-.069 1.688-.063 4.947s.021 3.667.083 4.947c.061 1.277.264 2.149.563 2.911c.308.789.72 1.457 1.388 2.123a5.9 5.9 0 0 0 2.129 1.38c.763.295 1.636.496 2.913.552c1.278.056 1.689.069 4.947.063s3.668-.021 4.947-.082c1.28-.06 2.147-.265 2.91-.563a5.9 5.9 0 0 0 2.123-1.388a5.9 5.9 0 0 0 1.38-2.129c.295-.763.496-1.636.551-2.912c.056-1.28.07-1.69.063-4.948c-.006-3.258-.02-3.667-.081-4.947c-.06-1.28-.264-2.148-.564-2.911a5.9 5.9 0 0 0-1.387-2.123a5.9 5.9 0 0 0-2.128-1.38c-.764-.294-1.636-.496-2.914-.55C15.647.009 15.236-.006 11.977 0S8.31.021 7.03.084m.14 21.693c-1.17-.05-1.805-.245-2.228-.408a3.7 3.7 0 0 1-1.382-.895a3.7 3.7 0 0 1-.9-1.378c-.165-.423-.363-1.058-.417-2.228c-.06-1.264-.072-1.644-.08-4.848c-.006-3.204.006-3.583.061-4.848c.05-1.169.246-1.805.408-2.228c.216-.561.477-.96.895-1.382a3.7 3.7 0 0 1 1.379-.9c.423-.165 1.057-.361 2.227-.417c1.265-.06 1.644-.072 4.848-.08c3.203-.006 3.583.006 4.85.062c1.168.05 1.804.244 2.227.408c.56.216.96.475.9.895s.681.817.9 1.378c.165.422.362 1.056.417 2.227c.06 1.265.074 1.645.08 4.848c.005 3.203-.006 3.583-.061 4.848c-.051 1.17-.245 1.805-.408 2.23c-.216.56-.477.96-.896 1.38a3.7 3.7 0 0 1-1.378.9c-.422.165-1.058.362-2.226.418c-1.266.06-1.645.072-4.85.079s-3.582-.006-4.848-.06m9.783-16.192a1.44 1.44 0 1 0 1.437-1.442a1.44 1.44 0 0 0-1.437 1.442M5.839 12.012a6.161 6.161 0 1 0 12.323-.024a6.162 6.162 0 0 0-12.323.024M8 12.008A4 4 0 1 1 12.008 16A4 4 0 0 1 8 12.008" />
+        </svg>
+      </a>
 
-                    <span class="absolute bottom-0 right-0 h-0.5 w-0 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300 group-hover:w-full">
-                    </span>
-                </a>
-            </li>
+      <!-- GitHub -->
+      <a href="#" aria-label="GitHub" class="group flex size-10 items-center justify-center rounded-xl border border-border bg-background/60 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/60 hover:bg-linear-to-br hover:from-primary hover:to-blue hover:shadow-lg hover:shadow-primary/20">
+        <svg class="size-4.5 fill-muted transition-all duration-300 group-hover:fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61c-.546-1.387-1.333-1.756-1.333-1.756c-1.089-.745.084-.729.084-.729c1.205.084 1.84 1.237 1.84 1.237c1.07 1.834 2.809 1.304 3.495.997c.108-.776.418-1.305.762-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3.003-.404c1.02.005 2.045.138 3.003.404c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.435.375.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+        </svg>
+      </a>
+    </div>
+  </nav>
+  <!-- Mobile Navigation -->
 
+  <!-- Mobile Side Menu -->
 
-            <li>
-                <a href="#" class="group relative inline-block py-2 text-sm font-medium text-muted transition-colors duration-300  hover:text-white">
-
-                    مهارت ها
-
-                    <span class="absolute bottom-0 right-0 h-0.5 w-0 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300 group-hover:w-full">
-                    </span>
-                </a>
-            </li>
-
-
-            <li>
-                <a href="#"
-                   class="group relative inline-block py-2 text-sm font-medium text-muted transition-colors duration-300  hover:text-white">
-
-                    ثبت سفارش
-
-                    <span class="absolute bottom-0 right-0 h-0.5 w-0 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300 group-hover:w-full">
-                    </span>
-                </a>
-            </li>
-
-
-            <li>
-                <a href="#"
-                   class="group relative inline-block py-2 text-sm font-medium text-muted transition-colors duration-300  hover:text-white">
-
-                    تماس با من
-
-                    <span class="absolute bottom-0 right-0 h-0.5 w-0 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300 group-hover:w-full">
-                    </span>
-                </a>
-            </li>
-
-        </ul>
-        <!-- Mobile Menu Button -->
-
-        <!-- Social Links -->
-        <div class="flex items-center gap-2">
-
-            <!-- Instagram -->
-            <a href="#" aria-label="Instagram" class="group flex size-10 items-center justify-center rounded-xl border border-border  bg-background/60 transition-all duration-300 hover:-translate-y-0.5  hover:border-primary/60 hover:bg-linear-to-br  hover:from-primary  hover:to-blue hover:shadow-lg hover:shadow-primary/20">
-
-                <svg class="size-4.5 fill-muted transition-all duration-300 group-hover:fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.03.084c-1.277.06-2.149.264-2.91.563a5.9 5.9 0 0 0-2.124 1.388a5.9 5.9 0 0 0-1.38 2.127C.321 4.926.12 5.8.064 7.076s-.069 1.688-.063 4.947s.021 3.667.083 4.947c.061 1.277.264 2.149.563 2.911c.308.789.72 1.457 1.388 2.123a5.9 5.9 0 0 0 2.129 1.38c.763.295 1.636.496 2.913.552c1.278.056 1.689.069 4.947.063s3.668-.021 4.947-.082c1.28-.06 2.147-.265 2.91-.563a5.9 5.9 0 0 0 2.123-1.388a5.9 5.9 0 0 0 1.38-2.129c.295-.763.496-1.636.551-2.912c.056-1.28.07-1.69.063-4.948c-.006-3.258-.02-3.667-.081-4.947c-.06-1.28-.264-2.148-.564-2.911a5.9 5.9 0 0 0-1.387-2.123a5.9 5.9 0 0 0-2.128-1.38c-.764-.294-1.636-.496-2.914-.55C15.647.009 15.236-.006 11.977 0S8.31.021 7.03.084m.14 21.693c-1.17-.05-1.805-.245-2.228-.408a3.7 3.7 0 0 1-1.382-.895a3.7 3.7 0 0 1-.9-1.378c-.165-.423-.363-1.058-.417-2.228c-.06-1.264-.072-1.644-.08-4.848c-.006-3.204.006-3.583.061-4.848c.05-1.169.246-1.805.408-2.228c.216-.561.477-.96.895-1.382a3.7 3.7 0 0 1 1.379-.9c.423-.165 1.057-.361 2.227-.417c1.265-.06 1.644-.072 4.848-.08c3.203-.006 3.583.006 4.85.062c1.168.05 1.804.244 2.227.408c.56.216.96.475.9.895s.681.817.9 1.378c.165.422.362 1.056.417 2.227c.06 1.265.074 1.645.08 4.848c.005 3.203-.006 3.583-.061 4.848c-.051 1.17-.245 1.805-.408 2.23c-.216.56-.477.96-.896 1.38a3.7 3.7 0 0 1-1.378.9c-.422.165-1.058.362-2.226.418c-1.266.06-1.645.072-4.85.079s-3.582-.006-4.848-.06m9.783-16.192a1.44 1.44 0 1 0 1.437-1.442a1.44 1.44 0 0 0-1.437 1.442M5.839 12.012a6.161 6.161 0 1 0 12.323-.024a6.162 6.162 0 0 0-12.323.024M8 12.008A4 4 0 1 1 12.008 16A4 4 0 0 1 8 12.008"/>
-                </svg>
-
-            </a>
-
-            <!-- GitHub -->
-            <a href="#" aria-label="GitHub" class="group flex size-10 items-center justify-center rounded-xl border border-border  bg-background/60 transition-all duration-300 hover:-translate-y-0.5  hover:border-primary/60 hover:bg-linear-to-br  hover:from-primary  hover:to-blue hover:shadow-lg hover:shadow-primary/20">
-                <svg class="size-4.5 fill-muted transition-all duration-300  group-hover:fill-white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61c-.546-1.387-1.333-1.756-1.333-1.756c-1.089-.745.084-.729.084-.729c1.205.084 1.84 1.237 1.84 1.237c1.07 1.834 2.809 1.304 3.495.997c.108-.776.418-1.305.762-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23a11.5 11.5 0 0 1 3.003-.404c1.02.005 2.045.138 3.003.404c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.435.375.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-                </svg>
-            </a>
-
-        </div>
-
-    </nav>
-<!-- Mobile Navigation -->
-<!-- Mobile Side Menu -->
-<div
-    id="mobile-menu"
-    class="fixed right-0 top-0 z-[60] h-screen w-[80%] max-w-sm
-           translate-x-full
-           border-l border-border/80
-           bg-surface/95
-           p-6
-           shadow-2xl shadow-black/40
-           backdrop-blur-xl
-           transition-transform duration-300 ease-out
-           lg:hidden"
->
-
+  <div id="mobile-menu" class="fixed right-0 top-0 z-60 h-screen w-[80%] max-w-sm translate-x-full border-l border-border/80 bg-surface/95 p-6 shadow-2xl shadow-black/40 backdrop-blur-xl transition-transform duration-300 ease-out lg:hidden">
     <!-- Menu Header -->
     <div class="flex items-center justify-between border-b border-border/60 pb-5">
-
-        <div class="flex items-center gap-3">
-
-            <div
-                class="flex size-10 items-center justify-center
-                       rounded-xl border border-border
-                       bg-background"
-            >
-                <img
-                    class="size-6"
-                    src="/static/img/code-2-svgrepo-com.svg"
-                    alt="code icon"
-                >
-            </div>
-
-            <div class="flex flex-col">
-                <span class="text-sm font-bold text-white">
-                    امیر
-                </span>
-
-                <span class="mt-1 text-xs text-muted">
-                    توسعه دهنده وب
-                </span>
-            </div>
-
+      <div class="flex items-center gap-3">
+        <div class="flex size-10 items-center justify-center rounded-xl border border-border bg-background">
+          <img class="size-6" src="/static/img/code-2-svgrepo-com.svg" alt="code icon" />
         </div>
 
-        <!-- Close -->
-        <button
-            id="mobile-menu-close"
-            type="button"
-            aria-label="بستن منو"
-            class="flex size-9 items-center justify-center
-                   rounded-lg border border-border
-                   text-muted transition-all duration-300
-                   hover:border-primary/60
-                   hover:bg-primary/10
-                   hover:text-white"
-        >
+        <div class="flex flex-col">
+          <span class="text-sm font-bold text-white">امیر</span>
 
-            <svg
-                class="size-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-            >
-                <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6 6l12 12M6 18L18 6"
-                />
-            </svg>
+          <span class="mt-1 text-xs text-muted">توسعه دهنده وب</span>
+        </div>
+      </div>
 
-        </button>
-
+      <!-- Close -->
+      <button id="mobile-menu-close" type="button" aria-label="بستن منو" class="flex size-9 items-center justify-center rounded-lg border border-border text-muted transition-all duration-300 hover:border-primary/60 hover:bg-primary/10 hover:text-white">
+        <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6" />
+        </svg>
+      </button>
     </div>
-
 
     <!-- Navigation -->
     <ul class="mt-6 flex flex-col gap-2">
+      <li>
+        <a href="{% url 'home' %}" class="flex items-center rounded-xl bg-primary/10 px-4 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-primary/20">خانه</a>
+      </li>
 
-        <li>
-            <a
-                href="#"
-                class="flex items-center rounded-xl
-                       bg-primary/10 px-4 py-3
-                       text-sm font-medium text-white
-                       transition-all duration-300
-                       hover:bg-primary/20"
-            >
-                خانه
-            </a>
-        </li>
+      <li>
+        <a href="{% url 'about_me_page' %}" class="flex items-center rounded-xl px-4 py-3 text-sm font-medium text-muted transition-all duration-300 hover:bg-primary/10 hover:text-white">درباره من</a>
+      </li>
 
-        <li>
-            <a
-                href="#"
-                class="flex items-center rounded-xl
-                       px-4 py-3
-                       text-sm font-medium text-muted
-                       transition-all duration-300
-                       hover:bg-primary/10 hover:text-white"
-            >
-                درباره من
-            </a>
-        </li>
+      <li>
+        <a href="{% url 'project_list_page' %}" class="flex items-center rounded-xl px-4 py-3 text-sm font-medium text-muted transition-all duration-300 hover:bg-primary/10 hover:text-white">پروژه ها</a>
+      </li>
 
-        <li>
-            <a
-                href="#"
-                class="flex items-center rounded-xl
-                       px-4 py-3
-                       text-sm font-medium text-muted
-                       transition-all duration-300
-                       hover:bg-primary/10 hover:text-white"
-            >
-                پروژه ها
-            </a>
-        </li>
+      <li>
+        <a href="{% url 'services_page' %}" class="flex items-center rounded-xl px-4 py-3 text-sm font-medium text-muted transition-all duration-300 hover:bg-primary/10 hover:text-white">خدمات</a>
+      </li>
 
-        <li>
-            <a
-                href="#"
-                class="flex items-center rounded-xl
-                       px-4 py-3
-                       text-sm font-medium text-muted
-                       transition-all duration-300
-                       hover:bg-primary/10 hover:text-white"
-            >
-                خدمات
-            </a>
-        </li>
+      <li>
+        <a href="{% url 'skills_page' %}" class="flex items-center rounded-xl px-4 py-3 text-sm font-medium text-muted transition-all duration-300 hover:bg-primary/10 hover:text-white">مهارت ها</a>
+      </li>
 
-        <li>
-            <a
-                href="#"
-                class="flex items-center rounded-xl
-                       px-4 py-3
-                       text-sm font-medium text-muted
-                       transition-all duration-300
-                       hover:bg-primary/10 hover:text-white"
-            >
-                مهارت ها
-            </a>
-        </li>
+      <li>
+        <a href="{% url 'order_page' %}" class="flex items-center rounded-xl px-4 py-3 text-sm font-medium text-muted transition-all duration-300 hover:bg-primary/10 hover:text-white">ثبت سفارش</a>
+      </li>
 
-        <li>
-            <a
-                href="#"
-                class="flex items-center rounded-xl
-                       px-4 py-3
-                       text-sm font-medium text-muted
-                       transition-all duration-300
-                       hover:bg-primary/10 hover:text-white"
-            >
-                ثبت سفارش
-            </a>
-        </li>
-
-        <li>
-            <a
-                href="#"
-                class="flex items-center rounded-xl
-                       px-4 py-3
-                       text-sm font-medium text-muted
-                       transition-all duration-300
-                       hover:bg-primary/10 hover:text-white"
-            >
-                تماس با من
-            </a>
-        </li>
-
+      <li>
+        <a href="{% url 'contact_me_page' %}" class="flex items-center rounded-xl px-4 py-3 text-sm font-medium text-muted transition-all duration-300 hover:bg-primary/10 hover:text-white">تماس با من</a>
+      </li>
     </ul>
+  </div>
 
-</div>
-
-
-<!-- Overlay -->
-<div
-    id="mobile-menu-overlay"
-    class="fixed inset-0 z-[55] hidden
-           bg-black/50 backdrop-blur-sm
-           lg:hidden"
-></div>
-
+  <!-- Overlay -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 z-55 hidden bg-black/50 backdrop-blur-sm lg:hidden"></div>
 </header>

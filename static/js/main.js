@@ -178,3 +178,35 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const revealElements = document.querySelectorAll(
+        ".reveal, .reveal-card, .skill-reveal, .timeline-item, .skill-progress"
+    );
+
+    if (!revealElements.length) {
+        return;
+    }
+
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+
+                entry.target.classList.add("is-visible");
+
+                observer.unobserve(entry.target);
+            });
+        },
+        {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px",
+        }
+    );
+
+    revealElements.forEach((element) => {
+        observer.observe(element);
+    });
+});
