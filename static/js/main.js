@@ -99,8 +99,12 @@ const skillsSwiper = new Swiper(".skills-swiper", {
 
     observer: true,
     observeParents: true,
-});
 
+    navigation: {
+        nextEl: "#skills-next",
+        prevEl: "#skills-prev",
+    },
+});
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -258,4 +262,141 @@ document.addEventListener('click', (event) => {
 
     changeImgGallery(image_id);
 });
+
+
+const orderForm = document.getElementById('order-form');
+
+if (orderForm) {
+
+    const submitBtn = document.getElementById('submit-btn');
+    const submitContent = document.getElementById('submit-content');
+    const submitLoading = document.getElementById('submit-loading');
+    const successMessage = document.getElementById('success-message');
+    orderForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        // نمایش Loading
+        submitBtn.disabled = true;
+        submitContent.classList.add('hidden');
+        submitLoading.classList.remove('hidden');
+        submitLoading.classList.add('flex');
+
+        // مخفی کردن پیام موفقیت قبلی
+        successMessage.classList.add('hidden');
+
+        const formData = new FormData(orderForm);
+
+        try {
+            const response = await fetch(
+                orderForm.action,
+                {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                    }
+                }
+            );
+            const data = await response.json();
+            if (response.ok && data.success) {
+                successMessage.textContent = data.message;
+                successMessage.classList.remove('hidden');
+
+                orderForm.reset();
+
+                // مخفی کردن پیام بعد از 5 ثانیه
+                setTimeout(() => {
+                    successMessage.classList.add('hidden');
+                }, 5000);
+            } else {
+                console.log(data.errors);
+            }
+        } catch (error) {
+            console.error(error);
+        } finally {
+            // خاموش کردن Loading
+            submitBtn.disabled = false;
+            submitContent.classList.remove('hidden');
+            submitLoading.classList.add('hidden');
+            submitLoading.classList.remove('flex');
+        }
+
+    });
+
+}
+
+const contactForm = document.getElementById('contact-form');
+
+if (contactForm) {
+
+    const submitBtn = document.getElementById('contact-submit-btn');
+    const submitContent = document.getElementById('contact-submit-content');
+    const submitLoading = document.getElementById('contact-submit-loading');
+    const successMessage = document.getElementById('contact-success-message');
+
+    contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        // نمایش loading
+        submitBtn.disabled = true;
+
+        submitContent.classList.add('hidden');
+
+        submitLoading.classList.remove('hidden');
+        submitLoading.classList.add('flex');
+
+        successMessage.classList.add('hidden');
+
+        const formData = new FormData(contactForm);
+
+        try {
+
+            const response = await fetch(
+                contactForm.action,
+                {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                    }
+                }
+            );
+
+            const data = await response.json();
+
+            if (response.ok && data.success) {
+
+                // نمایش پیام موفقیت
+                successMessage.textContent = data.message;
+                successMessage.classList.remove('hidden');
+
+                // پاک کردن فرم
+                contactForm.reset();
+
+                // مخفی کردن پیام بعد از 5 ثانیه
+                setTimeout(() => {
+                    successMessage.classList.add('hidden');
+                }, 5000);
+
+            } else {
+
+                console.log(data.errors);
+
+            }
+
+        } catch (error) {
+
+            console.error('Contact form error:', error);
+
+        } finally {
+
+            // برگشت دکمه به حالت عادی
+            submitBtn.disabled = false;
+
+            submitContent.classList.remove('hidden');
+
+            submitLoading.classList.add('hidden');
+            submitLoading.classList.remove('flex');
+        }
+    });
+}
 

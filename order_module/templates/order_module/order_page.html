@@ -124,7 +124,7 @@
         <!-- Projects Counter -->
         <div class="mt-5 rounded-xl border border-primary/30 bg-background/50 p-5 text-center">
           <div class="flex items-center justify-center gap-3">
-            <span class="text-2xl font-black text-blue">+۵۰</span>
+            <span class="text-2xl font-black text-blue">+{{ information.completed_projects }}</span>
           </div>
 
           <p class="mt-2 text-xs text-muted">پروژه موفق</p>
@@ -137,8 +137,9 @@
              ORDER FORM
         ==================================================  -->
 
-      <div class="overflow-hidden rounded-2xl border border-border bg-surface/50 backdrop-blur-xl">
-        <!-- Project Information -->
+      <form method="post" id="order-form" action="{% url 'order_page' %}" class="overflow-hidden rounded-2xl border border-border bg-surface/50 backdrop-blur-xl">
+        {% csrf_token %}
+          <!-- Project Information -->
         <div class="p-5 sm:p-6">
           <div class="mb-6 flex items-center gap-3">
             <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
@@ -149,38 +150,12 @@
           </div>
 
           <div class="space-y-5">
-            <!-- Project Number -->
-            <div>
-              <label for="project-number" class="mb-2 block text-xs font-medium text-muted">
-                شماره پروژه
-                <span class="text-muted">(اختیاری)</span>
-              </label>
-
-              <div class="relative">
-                <input id="project-number" type="text" placeholder="مثال: ۱۲۳۴" class="h-11 w-full rounded-lg border border-border bg-background/70 px-4 pl-11 text-sm text-text outline-none transition placeholder:text-muted/50 focus:border-primary focus:ring-2 focus:ring-primary/10" />
-
-                <i data-lucide="hash" class="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted"></i>
-              </div>
-            </div>
-
             <!-- Project Type -->
             <div>
-              <label for="project-type" class="mb-2 block text-xs font-medium text-muted">نوع پروژه</label>
+              <label for="project-type" class="mb-2 block text-xs font-medium text-muted">{{ form.project_type.label }}</label>
 
               <div class="relative">
-                <select id="project-type" class="h-11 w-full appearance-none rounded-lg border border-border bg-background/70 px-4 text-sm text-muted outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10">
-                  <option value="">انتخاب نوع پروژه</option>
-
-                  <option value="website">طراحی وب‌سایت</option>
-
-                  <option value="shop">فروشگاه اینترنتی</option>
-
-                  <option value="web-app">وب‌اپلیکیشن</option>
-
-                  <option value="landing">لندینگ پیج</option>
-
-                  <option value="other">سایر</option>
-                </select>
+                {{ form.project_type }}
 
                 <i data-lucide="chevron-down" class="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted"></i>
               </div>
@@ -188,9 +163,8 @@
 
             <!-- Description -->
             <div>
-              <label for="description" class="mb-2 block text-xs font-medium text-muted">توضیحات پروژه</label>
-
-              <textarea id="description" rows="4" placeholder="لطفاً توضیحات کامل پروژه خود را بنویسید..." class="w-full resize-none rounded-lg border border-border bg-background/70 px-4 py-3 text-sm leading-7 text-text outline-none transition placeholder:text-muted/50 focus:border-primary focus:ring-2 focus:ring-primary/10"></textarea>
+              <label for="description" class="mb-2 block text-xs font-medium text-muted">{{ form.description.label }}</label>
+              {{ form.description }}
             </div>
           </div>
         </div>
@@ -209,38 +183,49 @@
             <!-- Name + Email -->
             <div class="grid gap-5 sm:grid-cols-2">
               <div>
-                <label for="name" class="mb-2 block text-xs font-medium text-muted">نام و نام خانوادگی</label>
-
-                <input id="name" type="text" placeholder="نام و نام خانوادگی خود را وارد کنید" class="h-11 w-full rounded-lg border border-border bg-background/70 px-4 text-sm text-text outline-none transition placeholder:text-muted/50 focus:border-primary focus:ring-2 focus:ring-primary/10" />
+                <label for="name" class="mb-2 block text-xs font-medium text-muted">{{ form.first_name.label }}</label>
+                {{ form.first_name }}
               </div>
 
               <div>
-                <label for="email" class="mb-2 block text-xs font-medium text-muted">ایمیل</label>
-
-                <input id="email" type="email" placeholder="example@mail.com" class="h-11 w-full rounded-lg border border-border bg-background/70 px-4 text-sm text-text outline-none transition placeholder:text-muted/50 focus:border-primary focus:ring-2 focus:ring-primary/10" />
+                <label for="email" class="mb-2 block text-xs font-medium text-muted">{{ form.last_name.label }}</label>
+                {{ form.last_name }}
               </div>
             </div>
 
             <!-- Phone -->
             <div>
-              <label for="phone" class="mb-2 block text-xs font-medium text-muted">شماره تماس</label>
+              <label for="phone" class="mb-2 block text-xs font-medium text-muted">{{ form.phone_number.label }}</label>
 
               <div class="relative">
-                <input id="phone" dir="rtl" type="tel" placeholder="۰۹۱۲۳۴۵۶۷۸۹" class="h-11 w-full rounded-lg border border-border bg-background/70 px-4 pl-11 text-sm text-text outline-none transition placeholder:text-muted/50 focus:border-primary focus:ring-2 focus:ring-primary/10" />
-
-                <i data-lucide="phone" class="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted"></i>
+                {{ form.phone_number }}
               </div>
             </div>
+            <div>
+              <label for="phone" class="mb-2 block text-xs font-medium text-muted">{{ form.email.label }} (اختیاری)</label>
 
+              <div class="relative">
+                {{ form.email }}
+
+              </div>
+            </div>
             <!-- Submit -->
-            <button type="submit" class="group flex h-12 w-full items-center justify-center gap-3 rounded-lg bg-linear-to-l from-primary to-blue text-sm font-bold text-white shadow-lg shadow-primary/20 transition hover:-translate-y-0.5 hover:shadow-primary/30 active:translate-y-0">
-              ثبت درخواست
-
-              <i data-lucide="send" class="h-4 w-4 transition group-hover:-translate-x-1"></i>
+            <button id="submit-btn" type="submit" class="cursor-pointer group flex h-12 w-full items-center justify-center gap-3 rounded-lg bg-linear-to-l from-primary to-blue text-sm font-bold text-white shadow-lg shadow-primary/20 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-primary/30 active:translate-y-0 disabled:pointer-events-none disabled:opacity-70">
+                <!-- Normal -->
+                <span id="submit-content" class="flex items-center gap-3">
+                    ثبت درخواست
+                    <i data-lucide="send" class="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1"></i>
+                </span>
+                <!-- Loading -->
+                <span id="submit-loading" class="hidden items-center gap-3">
+                    در حال ارسال...
+                    <i data-lucide="loader-circle" class="h-4 w-4 animate-spin"></i>
+                </span>
             </button>
+            <div id="success-message" class="mt-4 hidden rounded-lg border border-green-500/20 bg-green-500/10 px-4 py-3 text-sm text-green-500"></div>
           </div>
         </div>
-      </div>
+      </form>
     </section>
 
     <!--  =====================================================

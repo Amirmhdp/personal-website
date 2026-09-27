@@ -8,10 +8,12 @@ from projects_module.models import Project, Skill
 def home(request):
     projects = Project.objects.filter(is_active=True).prefetch_related('skill')
     skills = Skill.objects.filter(is_active=True).order_by('id')
+    information = Public.objects.filter(is_active=True).first()
 
     context = {
         'projects': projects,
-        'skills': skills
+        'skills': skills,
+        'information': information
     }
     return render(request, 'home_module/home.html', context)
 

@@ -99,7 +99,7 @@
           <h3 class="mt-4 text-sm font-bold">ایمیل</h3>
 
           <p class="mt-2 text-xs leading-6 text-muted">
-            amir@example.com
+            {{ information.email }}
             <br />
             در کمترین زمان پاسخ می‌دهم
           </p>
@@ -115,25 +115,22 @@
           <h3 class="mt-4 text-sm font-bold">تلفن</h3>
 
           <p class="mt-2 text-xs leading-6 text-muted">
-            +98 912 345 6789
+            {{ information.phone_number }}
             <br />
             پاسخگویی در ساعات کاری
           </p>
         </div>
-
-        <!-- Address -->
-
         <div class="group rounded-xl border border-border bg-surface/40 p-5 text-center backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-primary/40">
           <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-cyan/20 bg-cyan/10 text-cyan">
-            <i data-lucide="map-pin" class="h-6 w-6"></i>
+            <i data-lucide="handshake" class="h-6 w-6"></i>
           </div>
 
-          <h3 class="mt-4 text-sm font-bold">آدرس</h3>
+          <h3 class="mt-4 text-sm font-bold">همکاری</h3>
 
           <p class="mt-2 text-xs leading-6 text-muted">
-            تهران، ایران
+            پروژه‌های اختصاصی و فریلنسری
             <br />
-            محدوده تجریش، خیابان ولیعصر
+            از ایده اولیه تا توسعه و تحویل پروژه
           </p>
         </div>
       </section>
@@ -229,63 +226,59 @@
 
           <!-- Form -->
 
-          <form action="#" method="POST" class="mt-7">
-            <!-- Name + Email -->
+          <form id="contact-form" action="{% url 'contact_me_page' %}" method="POST" class="mt-7">
 
+            {% csrf_token %}
             <div class="grid gap-4 sm:grid-cols-2">
               <!-- Name -->
-
               <div>
                 <label for="name" class="mb-2 block text-xs font-medium">
-                  نام و نام خانوادگی
+                  {{ form.first_name.label }}
                   <span class="text-primary">*</span>
                 </label>
 
                 <div class="relative">
                   <i data-lucide="user-round" class="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted"></i>
-
-                  <input id="name" name="name" type="text" placeholder="مثال: علی رضایی" class="h-12 w-full rounded-xl border border-border bg-background/60 pr-10 pl-4 text-xs text-text outline-none transition placeholder:text-muted/60 focus:border-primary focus:ring-2 focus:ring-primary/10" />
+                  {{ form.first_name }}
                 </div>
               </div>
-
-              <!-- Email -->
-
               <div>
-                <label for="email" class="mb-2 block text-xs font-medium">
-                  ایمیل
-                  <span class="text-primary">*</span>
-                </label>
+                    <label for="email" class="mb-2 block text-xs font-medium">
+                      {{ form.last_name.label }}
+                      <span class="text-primary">*</span>
+                    </label>
 
-                <div class="relative">
-                  <i data-lucide="mail" class="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted"></i>
+                    <div class="relative">
+                      <i data-lucide="mail" class="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted"></i>
+                        {{ form.last_name }}
+                    </div>
+                  </div>
+            </div>
+            <div class="mt-4">
+              <label for="" class="mb-2 block text-xs font-medium">
+                 {{ form.phone_number.label }}
+                <span class="text-primary">*</span>
+              </label>
 
-                  <input id="email" name="email" type="email" placeholder="example@gmail.com" class="h-12 w-full rounded-xl border border-border bg-background/60 pr-10 pl-4 text-xs text-text outline-none transition placeholder:text-muted/60 focus:border-primary focus:ring-2 focus:ring-primary/10" />
-                </div>
+              <div class="relative">
+                <i data-lucide="message-square" class="pointer-events-none absolute right-3 top-4 h-4 w-4 text-muted"></i>
+                {{ form.phone_number }}
               </div>
             </div>
+
 
             <!-- Subject -->
 
             <div class="mt-4">
               <label for="subject" class="mb-2 block text-xs font-medium">
-                موضوع
+                {{ form.subject.label }}
                 <span class="text-primary">*</span>
               </label>
 
               <div class="relative">
                 <i data-lucide="chevron-down" class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted"></i>
 
-                <select id="subject" name="subject" class="h-12 w-full appearance-none rounded-xl border border-border bg-background/60 px-4 text-xs text-muted outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/10">
-                  <option value="">انتخاب موضوع</option>
-
-                  <option value="project">سفارش طراحی سایت</option>
-
-                  <option value="development">توسعه پروژه</option>
-
-                  <option value="consultation">مشاوره</option>
-
-                  <option value="other">سایر موارد</option>
-                </select>
+                {{ form.subject }}
               </div>
             </div>
 
@@ -293,24 +286,32 @@
 
             <div class="mt-4">
               <label for="message" class="mb-2 block text-xs font-medium">
-                پیام شما
+                {{ form.message.label }}
                 <span class="text-primary">*</span>
               </label>
 
               <div class="relative">
                 <i data-lucide="message-square" class="pointer-events-none absolute right-3 top-4 h-4 w-4 text-muted"></i>
-
-                <textarea id="message" name="message" rows="6" placeholder="متن پیام خود را بنویسید..." class="w-full resize-none rounded-xl border border-border bg-background/60 py-3 pr-10 pl-4 text-xs leading-7 text-text outline-none transition placeholder:text-muted/60 focus:border-primary focus:ring-2 focus:ring-primary/10"></textarea>
+                {{ form.message }}
               </div>
             </div>
 
             <!-- Submit -->
 
-            <button type="submit" class="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-linear-to-l from-primary via-primary-light to-blue text-sm font-bold text-white shadow-[0_0_25px_rgba(139,92,246,0.15)] transition duration-300 hover:scale-[1.01] hover:shadow-[0_0_35px_rgba(139,92,246,0.25)] active:scale-[0.99]">
-              <span>ارسال پیام</span>
+            <button id="contact-submit-btn" type="submit" class="cursor-pointer group mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-linear-to-l from-primary via-primary-light to-blue text-sm font-bold text-white shadow-[0_0_25px_rgba(139,92,246,0.15)] transition duration-300 hover:scale-[1.01] hover:shadow-[0_0_35px_rgba(139,92,246,0.25)] active:scale-[0.99] disabled:pointer-events-none disabled:opacity-70">
+                <!-- حالت عادی -->
+                <span id="contact-submit-content" class="flex items-center gap-2">
+                    <span>ارسال پیام</span>
+                    <i data-lucide="send" class="h-4 w-4 transition-transform duration-300 group-hover:-translate-x-1"></i>
+                </span>
 
-              <i data-lucide="send" class="h-4 w-4"></i>
+                <!-- حالت loading -->
+                <span id="contact-submit-loading" class="hidden items-center gap-2">
+                    <span>در حال ارسال...</span>
+                    <i data-lucide="loader-circle" class="h-4 w-4 animate-spin"></i>
+                </span>
             </button>
+              <div id="contact-success-message" class="mt-4 hidden rounded-lg border border-green-500/20 bg-green-500/10 px-4 py-3 text-sm text-green-500"></div>
           </form>
         </div>
       </section>

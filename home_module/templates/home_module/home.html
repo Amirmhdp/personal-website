@@ -254,7 +254,7 @@
     </section>
 
     <!-- SKILLS LIST -->
-    <section id="skills" class="overflow-hidden px-4 py-16 sm:py-20 lg:py-11.25">
+    <section id="skills" class="relative overflow-hidden px-4 py-16 sm:py-20 lg:py-11.25">
       <div class="mx-auto max-w-7xl">
         <!-- Section Header -->
         <div class="mb-10 text-center sm:mb-5">
@@ -292,6 +292,23 @@
 
           </div>
         </div>
+      <button
+        id="skills-prev"
+        type="button"
+        aria-label="مهارت قبلی"
+        class="skills-nav-btn absolute right-0 top-[69%] z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-surface/90 text-muted shadow-lg backdrop-blur-md transition-all duration-300 hover:border-primary/40 hover:bg-primary/10 hover:text-primary active:scale-95"
+    >
+        <i data-lucide="chevron-right" class="h-5 w-5 text-muted!"></i>
+    </button>
+
+    <button
+        id="skills-next"
+        type="button"
+        aria-label="مهارت بعدی"
+        class="skills-nav-btn absolute left-0 top-[69%] z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-surface/90 text-muted shadow-lg backdrop-blur-md transition-all duration-300 hover:border-primary/40 hover:bg-primary/10 hover:text-primary active:scale-95"
+    >
+        <i data-lucide="chevron-left" class="h-5 w-5 text-muted!"></i>
+    </button>
       </div>
     </section>
 
@@ -313,7 +330,7 @@
                 </svg>
               </div>
 
-              <span class="counter bg-linear-to-r from-primary-light to-primary bg-clip-text text-3xl font-black text-transparent" data-target="2">0</span>
+              <span class="counter bg-linear-to-r from-primary-light to-primary bg-clip-text text-3xl font-black text-transparent" data-target="{{ information.years_of_experience }}">0</span>
 
               <span class="mt-2 text-sm text-muted">سال تجربه</span>
             </div>
@@ -332,7 +349,7 @@
                   </svg>
                 </div>
 
-                <span class="counter bg-linear-to-r from-blue to-cyan bg-clip-text text-3xl font-black text-transparent" data-target="10" data-suffix="+">0</span>
+                <span class="counter bg-linear-to-r from-blue to-cyan bg-clip-text text-3xl font-black text-transparent" data-target="{{ information.completed_projects }}" data-suffix="+">0</span>
                 <span class="mt-2 text-sm text-muted">پروژه کامل</span>
               </div>
             </div>
@@ -371,4 +388,11 @@
       </div>
     </section>
   </main>
+    {% block footer_references %}
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+      lucide.createIcons()
+    </script>
+  {% endblock %}
 {% endblock %}
