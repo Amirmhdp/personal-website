@@ -6,6 +6,8 @@ from django.utils.text import slugify
 class Skill(models.Model):
     title = models.CharField(max_length=100, verbose_name="عنوان مهارت")
     image = models.FileField(upload_to="skills/", verbose_name="تصویر مهارت")
+    ability_number = models.PositiveIntegerField(null=True, blank=True, verbose_name='امتیاز')
+    is_active = models.BooleanField(default=True, verbose_name='فعال / غیرفعال')
 
     class Meta:
         verbose_name = "مهارت"
@@ -24,6 +26,7 @@ class Project(models.Model):
     end_date = models.DateField(null=True, blank=True, verbose_name="تاریخ پایان پروژه")
     is_completed = models.BooleanField(default=False, verbose_name="تکمیل شده")
     github_url = models.URLField(blank=True, verbose_name="آدرس گیت‌هاب")
+    is_active = models.BooleanField(default=True, verbose_name='فعال / غیرفعال')
     def save(self, *args, **kwargs):
         self.url_title = slugify(self.title, allow_unicode=True)
         super(Project, self).save(*args, **kwargs)
