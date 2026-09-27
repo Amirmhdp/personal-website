@@ -57,7 +57,7 @@
             <!-- Stat -->
 
             <div class="rounded-xl border border-border bg-surface/50 px-3 py-4 text-center backdrop-blur-xl transition hover:border-primary/40">
-              <div class="text-lg font-black text-primary-light sm:text-xl">۵+</div>
+              <div class="text-lg font-black text-primary-light sm:text-xl">{{ information.years_of_experience }}+</div>
 
               <p class="mt-1 text-[10px] text-muted sm:text-xs">سال تجربه</p>
             </div>
@@ -65,7 +65,7 @@
             <!-- Stat -->
 
             <div class="rounded-xl border border-border bg-surface/50 px-3 py-4 text-center backdrop-blur-xl transition hover:border-primary/40">
-              <div class="text-lg font-black text-primary-light sm:text-xl">۳۰+</div>
+              <div class="text-lg font-black text-primary-light sm:text-xl">{{ information.completed_projects }}+</div>
 
               <p class="mt-1 text-[10px] text-muted sm:text-xs">پروژه موفق</p>
             </div>
@@ -114,268 +114,27 @@
 
       <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <!-- Python -->
+        {% for skill in skills %}
+            <div class="group rounded-xl border border-border bg-surface/40 p-4 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-surface-light/60">
+              <div class="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-blue/20 bg-blue/10">
+                <img src="{{ skill.image.url }}" alt="{{ skill.title }}" class="h-7 w-7 object-contain" />
+              </div>
 
-        <div class="group rounded-xl border border-border bg-surface/40 p-4 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-primary/50 hover:bg-surface-light/60">
-          <div class="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-blue/20 bg-blue/10">
-            <img src="/static/img/python-svgrepo-com.svg" alt="Python" class="h-7 w-7 object-contain" />
-          </div>
+              <h3 class="mt-3 text-sm font-bold">{{ skill.title }}</h3>
+              <div class="mt-4">
+                <div class="mb-2 flex items-center justify-between text-[10px]">
+                  <span class="text-muted">{{ skill.ability_number }}٪</span>
+                </div>
 
-          <h3 class="mt-3 text-sm font-bold">Python</h3>
-
-          <p class="mt-2 text-xs leading-6 text-muted">توسعه بک‌اند و اسکریپت‌نویسی</p>
-
-          <div class="mt-4">
-            <div class="mb-2 flex items-center justify-between text-[10px]">
-              <span class="text-muted">۹۰٪</span>
+                <div class="h-1.5 overflow-hidden rounded-full bg-blue/10">
+                  <div style="width: {{ skill.ability_number }}%" class="h-full  rounded-full bg-linear-to-l from-primary to-blue"></div>
+                </div>
+              </div>
             </div>
 
-            <div class="h-1.5 overflow-hidden rounded-full bg-blue/10">
-              <div class="h-full w-[90%] rounded-full bg-linear-to-l from-primary to-blue"></div>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
 
-        <!-- Django -->
 
-        <div class="group rounded-xl border border-border bg-surface/40 p-4 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-primary/50">
-          <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan/10 text-cyan">
-                <img src="/static/img/django-icon.svg" alt="Python" class="h-7 w-7 object-contain" />
-          </div>
-
-          <h3 class="mt-3 text-sm font-bold">Django</h3>
-
-          <p class="mt-2 text-xs leading-6 text-muted">فریمورک قدرتمند پایتون</p>
-
-          <div class="mt-4">
-            <div class="mb-2 flex justify-between text-[10px]">
-              <span class="text-muted">۹۰٪</span>
-            </div>
-
-            <div class="h-1.5 overflow-hidden rounded-full bg-blue/10">
-              <div class="h-full w-[90%] rounded-full bg-linear-to-l from-primary to-blue"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- DRF -->
-
-        <div class="group rounded-xl border border-border bg-surface/40 p-4 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-primary/50">
-          <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-pink/10 text-pink">
-            <span class="text-sm font-black">API</span>
-          </div>
-
-          <h3 class="mt-3 text-sm font-bold">Django REST Framework</h3>
-
-          <p class="mt-2 text-xs leading-6 text-muted">ساخت API های حرفه‌ای</p>
-
-          <div class="mt-4">
-            <div class="mb-2 flex justify-between text-[10px]">
-              <span class="text-muted">۸۵٪</span>
-            </div>
-
-            <div class="h-1.5 overflow-hidden rounded-full bg-blue/10">
-              <div class="h-full w-[85%] rounded-full bg-linear-to-l from-primary to-blue"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- JavaScript -->
-
-        <div class="group rounded-xl border border-border bg-surface/40 p-4 backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-primary/50">
-          <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-yellow-400/10 text-yellow-300">
-            <img src="/static/img/javascript-icon.svg" alt="Python" class="h-7 w-7 object-contain" />
-          </div>
-
-          <h3 class="mt-3 text-sm font-bold">JavaScript</h3>
-
-          <p class="mt-2 text-xs leading-6 text-muted">توسعه فرانت‌اند و تعاملات کاربری</p>
-
-          <div class="mt-4">
-            <div class="mb-2 flex justify-between text-[10px]">
-              <span class="text-muted">۸۰٪</span>
-            </div>
-
-            <div class="h-1.5 overflow-hidden rounded-full bg-blue/10">
-              <div class="h-full w-[80%] rounded-full bg-linear-to-l from-primary to-blue"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- React -->
-
-        <div class="group rounded-xl border border-border bg-surface/40 p-4 transition duration-300 hover:-translate-y-1 hover:border-cyan/50">
-          <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan/10 text-cyan">
-            <i data-lucide="atom" class="h-6 w-6"></i>
-          </div>
-
-          <h3 class="mt-3 text-sm font-bold">React</h3>
-
-          <p class="mt-2 text-xs leading-6 text-muted">ساخت رابط‌های کاربری مدرن</p>
-
-          <div class="mt-4">
-            <div class="mb-2 flex justify-between text-[10px]">
-              <span class="text-muted">۷۰٪</span>
-            </div>
-
-            <div class="h-1.5 overflow-hidden rounded-full bg-blue/10">
-              <div class="h-full w-[70%] rounded-full bg-linear-to-l from-primary to-blue"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tailwind -->
-
-        <div class="group rounded-xl border border-border bg-surface/40 p-4 transition duration-300 hover:-translate-y-1 hover:border-cyan/50">
-          <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan/10 text-cyan">
-            <span class="text-xl font-black">≋</span>
-          </div>
-
-          <h3 class="mt-3 text-sm font-bold">Tailwind CSS</h3>
-
-          <p class="mt-2 text-xs leading-6 text-muted">طراحی سریع و ریسپانسیو</p>
-
-          <div class="mt-4">
-            <div class="mb-2 flex justify-between text-[10px]">
-              <span class="text-muted">۸۵٪</span>
-            </div>
-
-            <div class="h-1.5 overflow-hidden rounded-full bg-blue/10">
-              <div class="h-full w-[85%] rounded-full bg-linear-to-l from-primary to-blue"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PostgreSQL -->
-
-        <div class="group rounded-xl border border-border bg-surface/40 p-4 transition duration-300 hover:-translate-y-1 hover:border-blue/50">
-          <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue/10 text-blue">
-            <i data-lucide="database" class="h-6 w-6"></i>
-          </div>
-
-          <h3 class="mt-3 text-sm font-bold">PostgreSQL</h3>
-
-          <p class="mt-2 text-xs leading-6 text-muted">مدیریت پایگاه داده</p>
-
-          <div class="mt-4">
-            <div class="mb-2 flex justify-between text-[10px]">
-              <span class="text-muted">۸۰٪</span>
-            </div>
-
-            <div class="h-1.5 overflow-hidden rounded-full bg-blue/10">
-              <div class="h-full w-[80%] rounded-full bg-linear-to-l from-primary to-blue"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Redis -->
-
-        <div class="group rounded-xl border border-border bg-surface/40 p-4 transition duration-300 hover:-translate-y-1 hover:border-pink/50">
-          <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-pink/10 text-pink">
-            <i data-lucide="layers" class="h-6 w-6"></i>
-          </div>
-
-          <h3 class="mt-3 text-sm font-bold">Redis</h3>
-
-          <p class="mt-2 text-xs leading-6 text-muted">کش و مدیریت سریع داده‌ها</p>
-
-          <div class="mt-4">
-            <div class="mb-2 flex justify-between text-[10px]">
-              <span class="text-muted">۷۰٪</span>
-            </div>
-
-            <div class="h-1.5 overflow-hidden rounded-full bg-blue/10">
-              <div class="h-full w-[70%] rounded-full bg-linear-to-l from-primary to-blue"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Docker -->
-
-        <div class="group rounded-xl border border-border bg-surface/40 p-4 transition duration-300 hover:-translate-y-1 hover:border-cyan/50">
-          <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan/10 text-cyan">
-            <i data-lucide="container" class="h-6 w-6"></i>
-          </div>
-
-          <h3 class="mt-3 text-sm font-bold">Docker</h3>
-
-          <p class="mt-2 text-xs leading-6 text-muted">کانتینرسازی و استقرار پروژه‌ها</p>
-
-          <div class="mt-4">
-            <div class="mb-2 flex justify-between text-[10px]">
-              <span class="text-muted">۷۵٪</span>
-            </div>
-
-            <div class="h-1.5 overflow-hidden rounded-full bg-blue/10">
-              <div class="h-full w-[75%] rounded-full bg-linear-to-l from-primary to-blue"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- HTMX -->
-
-        <div class="group rounded-xl border border-border bg-surface/40 p-4 transition duration-300 hover:-translate-y-1 hover:border-primary/50">
-          <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
-            <span class="text-xs font-black">HTMX</span>
-          </div>
-
-          <h3 class="mt-3 text-sm font-bold">HTMX</h3>
-
-          <p class="mt-2 text-xs leading-6 text-muted">تعاملات پویا در سمت سرور</p>
-
-          <div class="mt-4">
-            <div class="mb-2 flex justify-between text-[10px]">
-              <span class="text-muted">۶۵٪</span>
-            </div>
-
-            <div class="h-1.5 overflow-hidden rounded-full bg-blue/10">
-              <div class="h-full w-[65%] rounded-full bg-linear-to-l from-primary to-blue"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Git -->
-
-        <div class="group rounded-xl border border-border bg-surface/40 p-4 transition duration-300 hover:-translate-y-1 hover:border-primary/50">
-          <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
-            <i data-lucide="git-branch" class="h-6 w-6"></i>
-          </div>
-
-          <h3 class="mt-3 text-sm font-bold">Git</h3>
-
-          <p class="mt-2 text-xs leading-6 text-muted">مدیریت نسخه و همکاری</p>
-
-          <div class="mt-4">
-            <div class="mb-2 flex justify-between text-[10px]">
-              <span class="text-muted">۹۰٪</span>
-            </div>
-
-            <div class="h-1.5 overflow-hidden rounded-full bg-blue/10">
-              <div class="h-full w-[90%] rounded-full bg-linear-to-l from-primary to-blue"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Linux -->
-
-        <div class="group rounded-xl border border-border bg-surface/40 p-4 transition duration-300 hover:-translate-y-1 hover:border-cyan/50">
-          <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue/10 text-blue">
-            <i data-lucide="terminal" class="h-6 w-6"></i>
-          </div>
-
-          <h3 class="mt-3 text-sm font-bold">Linux</h3>
-
-          <p class="mt-2 text-xs leading-6 text-muted">مدیریت سرور و محیط لینوکس</p>
-
-          <div class="mt-4">
-            <div class="mb-2 flex justify-between text-[10px]">
-              <span class="text-muted">۷۰٪</span>
-            </div>
-
-            <div class="h-1.5 overflow-hidden rounded-full bg-blue/10">
-              <div class="h-full w-[70%] rounded-full bg-linear-to-l from-primary to-blue"></div>
-            </div>
-          </div>
-        </div>
       </div>
 
       <!--  =================================================
@@ -438,19 +197,7 @@
 
               <span class="text-[11px]">Ubuntu</span>
             </div>
-
-            <div class="flex h-20 flex-col items-center justify-center gap-2 rounded-xl border border-border bg-background/50 transition hover:border-primary/40 hover:bg-primary/5">
-              <span class="text-sm font-black text-white">AWS</span>
-
-              <span class="text-[11px]">AWS</span>
-            </div>
-
-            <div class="flex h-20 flex-col items-center justify-center gap-2 rounded-xl border border-border bg-background/50 transition hover:border-primary/40 hover:bg-primary/5">
-              <span class="text-sm font-black">▲</span>
-
-              <span class="text-[11px]">Vercel</span>
-            </div>
-
+              
             <div class="flex h-20 flex-col items-center justify-center gap-2 rounded-xl border border-border bg-background/50 transition hover:border-primary/40 hover:bg-primary/5">
               <i data-lucide="braces" class="h-6 w-6 text-green-400"></i>
 

@@ -43,7 +43,18 @@ def about_me(request):
     return render(request, 'home_module/about_me.html', context)
 
 def sevices(request):
-    return render(request, 'home_module/services.html')
+    information = Public.objects.filter(is_active=True).first()
+    context = {
+        'information': information
+    }
+    return render(request, 'home_module/services.html', context)
 
 def skills(request):
-    return render(request, 'home_module/skills.html')
+    information = Public.objects.filter(is_active=True).first()
+    skills = Skill.objects.filter(is_active=True).order_by('id')
+
+    context = {
+        'information': information,
+        'skills': skills
+    }
+    return render(request, 'home_module/skills.html', context)
