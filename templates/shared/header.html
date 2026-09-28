@@ -24,59 +24,213 @@
 
     <!-- Navigation -->
     <ul class="hidden items-center gap-8 lg:flex">
-      <!-- Active -->
+      <!-- خانه -->
       <li>
-        <a href="{% url 'home' %}" class="group relative inline-block py-2 text-sm font-medium text-white">
+        <a href="{% url 'home' %}"
+          class="group relative inline-block py-2 text-sm font-medium transition-colors duration-300
+            {% if request.resolver_match.url_name == 'home' %}
+            
+                text-white
+
+          {% else %}
+            
+                text-muted hover:text-white
+
+          {% endif %}">
           خانه
-          <span class="absolute bottom-0 right-0 h-0.5 w-full rounded-full bg-linear-to-l from-primary to-blue shadow-[0_0_10px_rgba(139,92,246,0.5)]"></span>
+
+          <span class="absolute bottom-0 right-0 h-0.5 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300
+                {% if request.resolver_match.url_name == 'home' %}
+              
+                    w-full shadow-[0_0_10px_rgba(139,92,246,0.5)]
+
+            {% else %}
+              
+                    w-0 group-hover:w-full group-hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+
+            {% endif %}">
+
+          </span>
         </a>
       </li>
 
-      <!-- Navigation item -->
+      <!-- درباره من -->
       <li>
-        <a href="{% url 'about_me_page' %}" class="group relative inline-block py-2 text-sm font-medium text-muted transition-colors duration-300 hover:text-white">
+        <a href="{% url 'about_me_page' %}"
+          class="group relative inline-block py-2 text-sm font-medium transition-colors duration-300
+            {% if request.resolver_match.url_name == 'about_me_page' %}
+            
+                text-white
+
+          {% else %}
+            
+                text-muted hover:text-white
+
+          {% endif %}">
           درباره من
-          <span class="absolute bottom-0 right-0 h-0.5 w-0 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]"></span>
+
+          <span class="absolute bottom-0 right-0 h-0.5 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300
+                {% if request.resolver_match.url_name == 'about_me_page' %}
+              
+                    w-full shadow-[0_0_10px_rgba(139,92,246,0.5)]
+
+            {% else %}
+              
+                    w-0 group-hover:w-full group-hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+
+            {% endif %}">
+
+          </span>
         </a>
       </li>
 
+      <!-- پروژه ها -->
       <li>
-        <a href="{% url 'project_list_page' %}" class="group relative inline-block py-2 text-sm font-medium text-muted transition-colors duration-300 hover:text-white">
+        <a href="{% url 'project_list_page' %}"
+          class="group relative inline-block py-2 text-sm font-medium transition-colors duration-300
+            {% if request.resolver_match.url_name == 'project_list_page' %}
+            
+                text-white
+
+          {% else %}
+            
+                text-muted hover:text-white
+
+          {% endif %}">
           پروژه ها
 
-          <span class="absolute bottom-0 right-0 h-0.5 w-0 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300 group-hover:w-full"></span>
+          <span class="absolute bottom-0 right-0 h-0.5 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300
+                {% if request.resolver_match.url_name == 'project_list_page' %}
+              
+                    w-full shadow-[0_0_10px_rgba(139,92,246,0.5)]
+
+            {% else %}
+              
+                    w-0 group-hover:w-full group-hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+
+            {% endif %}">
+
+          </span>
         </a>
       </li>
 
+      <!-- خدمات -->
       <li>
-        <a href="{% url 'services_page' %}" class="group relative inline-block py-2 text-sm font-medium text-muted transition-colors duration-300 hover:text-white">
+        <a href="{% url 'services_page' %}"
+          class="group relative inline-block py-2 text-sm font-medium transition-colors duration-300
+            {% if request.resolver_match.url_name == 'services_page' %}
+            
+                text-white
+
+          {% else %}
+            
+                text-muted hover:text-white
+
+          {% endif %}">
           خدمات
 
-          <span class="absolute bottom-0 right-0 h-0.5 w-0 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300 group-hover:w-full"></span>
+          <span class="absolute bottom-0 right-0 h-0.5 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300
+                {% if request.resolver_match.url_name == 'services_page' %}
+              
+                    w-full shadow-[0_0_10px_rgba(139,92,246,0.5)]
+
+            {% else %}
+              
+                    w-0 group-hover:w-full group-hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+
+            {% endif %}">
+
+          </span>
         </a>
       </li>
 
+      <!-- مهارت ها -->
       <li>
-        <a href="{% url 'skills_page' %}" class="group relative inline-block py-2 text-sm font-medium text-muted transition-colors duration-300 hover:text-white">
+        <a href="{% url 'skills_page' %}"
+          class="group relative inline-block py-2 text-sm font-medium transition-colors duration-300
+            {% if request.resolver_match.url_name == 'skills_page' %}
+            
+                text-white
+
+          {% else %}
+            
+                text-muted hover:text-white
+
+          {% endif %}">
           مهارت ها
 
-          <span class="absolute bottom-0 right-0 h-0.5 w-0 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300 group-hover:w-full"></span>
+          <span class="absolute bottom-0 right-0 h-0.5 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300
+                {% if request.resolver_match.url_name == 'skills_page' %}
+              
+                    w-full shadow-[0_0_10px_rgba(139,92,246,0.5)]
+
+            {% else %}
+              
+                    w-0 group-hover:w-full group-hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+
+            {% endif %}">
+
+          </span>
         </a>
       </li>
 
+      <!-- ثبت سفارش -->
       <li>
-        <a href="{% url 'order_page' %}" class="group relative inline-block py-2 text-sm font-medium text-muted transition-colors duration-300 hover:text-white">
+        <a href="{% url 'order_page' %}"
+          class="group relative inline-block py-2 text-sm font-medium transition-colors duration-300
+            {% if request.resolver_match.url_name == 'order_page' %}
+            
+                text-white
+
+          {% else %}
+            
+                text-muted hover:text-white
+
+          {% endif %}">
           ثبت سفارش
 
-          <span class="absolute bottom-0 right-0 h-0.5 w-0 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300 group-hover:w-full"></span>
+          <span class="absolute bottom-0 right-0 h-0.5 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300
+                {% if request.resolver_match.url_name == 'order_page' %}
+              
+                    w-full shadow-[0_0_10px_rgba(139,92,246,0.5)]
+
+            {% else %}
+              
+                    w-0 group-hover:w-full group-hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+
+            {% endif %}">
+
+          </span>
         </a>
       </li>
 
+      <!-- تماس با من -->
       <li>
-        <a href="{% url 'contact_me_page' %}" class="group relative inline-block py-2 text-sm font-medium text-muted transition-colors duration-300 hover:text-white">
+        <a href="{% url 'contact_me_page' %}"
+          class="group relative inline-block py-2 text-sm font-medium transition-colors duration-300
+            {% if request.resolver_match.url_name == 'contact_me_page' %}
+            
+                text-white
+
+          {% else %}
+            
+                text-muted hover:text-white
+
+          {% endif %}">
           تماس با من
 
-          <span class="absolute bottom-0 right-0 h-0.5 w-0 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300 group-hover:w-full"></span>
+          <span class="absolute bottom-0 right-0 h-0.5 rounded-full bg-linear-to-l from-primary to-blue transition-all duration-300
+                {% if request.resolver_match.url_name == 'contact_me_page' %}
+              
+                    w-full shadow-[0_0_10px_rgba(139,92,246,0.5)]
+
+            {% else %}
+              
+                    w-0 group-hover:w-full group-hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+
+            {% endif %}">
+
+          </span>
         </a>
       </li>
     </ul>
@@ -113,7 +267,6 @@
 
         <div class="flex flex-col">
           <span class="text-sm font-bold text-white">امیر</span>
-
           <span class="mt-1 text-xs text-muted">توسعه دهنده وب</span>
         </div>
       </div>
@@ -128,36 +281,126 @@
 
     <!-- Navigation -->
     <ul class="mt-6 flex flex-col gap-2">
+      <!-- خانه -->
       <li>
-        <a href="{% url 'home' %}" class="flex items-center rounded-xl bg-primary/10 px-4 py-3 text-sm font-medium text-white transition-all duration-300 hover:bg-primary/20">خانه</a>
+        <a href="{% url 'home' %}"
+          class="flex items-center rounded-xl px-4 py-3 text-sm font-medium transition-all duration-300
+                {% if request.resolver_match.url_name == 'home' %}
+            
+                    bg-primary/10 text-white
+
+          {% else %}
+            
+                    text-muted hover:bg-primary/10 hover:text-white
+
+          {% endif %}">
+          خانه
+        </a>
       </li>
 
+      <!-- درباره من -->
       <li>
-        <a href="{% url 'about_me_page' %}" class="flex items-center rounded-xl px-4 py-3 text-sm font-medium text-muted transition-all duration-300 hover:bg-primary/10 hover:text-white">درباره من</a>
+        <a href="{% url 'about_me_page' %}"
+          class="flex items-center rounded-xl px-4 py-3 text-sm font-medium transition-all duration-300
+                {% if request.resolver_match.url_name == 'about_me_page' %}
+            
+                    bg-primary/10 text-white
+
+          {% else %}
+            
+                    text-muted hover:bg-primary/10 hover:text-white
+
+          {% endif %}">
+          درباره من
+        </a>
       </li>
 
+      <!-- پروژه ها -->
       <li>
-        <a href="{% url 'project_list_page' %}" class="flex items-center rounded-xl px-4 py-3 text-sm font-medium text-muted transition-all duration-300 hover:bg-primary/10 hover:text-white">پروژه ها</a>
+        <a href="{% url 'project_list_page' %}"
+          class="flex items-center rounded-xl px-4 py-3 text-sm font-medium transition-all duration-300
+                {% if request.resolver_match.url_name == 'project_list_page' %}
+            
+                    bg-primary/10 text-white
+
+          {% else %}
+            
+                    text-muted hover:bg-primary/10 hover:text-white
+
+          {% endif %}">
+          پروژه ها
+        </a>
       </li>
 
+      <!-- خدمات -->
       <li>
-        <a href="{% url 'services_page' %}" class="flex items-center rounded-xl px-4 py-3 text-sm font-medium text-muted transition-all duration-300 hover:bg-primary/10 hover:text-white">خدمات</a>
+        <a href="{% url 'services_page' %}"
+          class="flex items-center rounded-xl px-4 py-3 text-sm font-medium transition-all duration-300
+                {% if request.resolver_match.url_name == 'services_page' %}
+            
+                    bg-primary/10 text-white
+
+          {% else %}
+            
+                    text-muted hover:bg-primary/10 hover:text-white
+
+          {% endif %}">
+          خدمات
+        </a>
       </li>
 
+      <!-- مهارت ها -->
       <li>
-        <a href="{% url 'skills_page' %}" class="flex items-center rounded-xl px-4 py-3 text-sm font-medium text-muted transition-all duration-300 hover:bg-primary/10 hover:text-white">مهارت ها</a>
+        <a href="{% url 'skills_page' %}"
+          class="flex items-center rounded-xl px-4 py-3 text-sm font-medium transition-all duration-300
+                {% if request.resolver_match.url_name == 'skills_page' %}
+            
+                    bg-primary/10 text-white
+
+          {% else %}
+            
+                    text-muted hover:bg-primary/10 hover:text-white
+
+          {% endif %}">
+          مهارت ها
+        </a>
       </li>
 
+      <!-- ثبت سفارش -->
       <li>
-        <a href="{% url 'order_page' %}" class="flex items-center rounded-xl px-4 py-3 text-sm font-medium text-muted transition-all duration-300 hover:bg-primary/10 hover:text-white">ثبت سفارش</a>
+        <a href="{% url 'order_page' %}"
+          class="flex items-center rounded-xl px-4 py-3 text-sm font-medium transition-all duration-300
+                {% if request.resolver_match.url_name == 'order_page' %}
+            
+                    bg-primary/10 text-white
+
+          {% else %}
+            
+                    text-muted hover:bg-primary/10 hover:text-white
+
+          {% endif %}">
+          ثبت سفارش
+        </a>
       </li>
 
+      <!-- تماس با من -->
       <li>
-        <a href="{% url 'contact_me_page' %}" class="flex items-center rounded-xl px-4 py-3 text-sm font-medium text-muted transition-all duration-300 hover:bg-primary/10 hover:text-white">تماس با من</a>
+        <a href="{% url 'contact_me_page' %}"
+          class="flex items-center rounded-xl px-4 py-3 text-sm font-medium transition-all duration-300
+                {% if request.resolver_match.url_name == 'contact_me_page' %}
+            
+                    bg-primary/10 text-white
+
+          {% else %}
+            
+                    text-muted hover:bg-primary/10 hover:text-white
+
+          {% endif %}">
+          تماس با من
+        </a>
       </li>
     </ul>
   </div>
-
   <!-- Overlay -->
   <div id="mobile-menu-overlay" class="fixed inset-0 z-55 hidden bg-black/50 backdrop-blur-sm lg:hidden"></div>
 </header>
