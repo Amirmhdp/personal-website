@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @font-face {
-    font-family: "IRANSansX";
-    src: url("/static/font/IRANSansXFaNum-RegularD4.ttf") format("truetype");
+    font-family: "Estedad";
+    src: url("/static/font/Estedad-Regular.woff2") format("truetype");
 
     font-weight: 400;
     font-style: normal;
@@ -36,7 +36,7 @@
 
     /* Pink */
     --color-pink: #EC4899;
-    --font-sans: "IRANSansX", sans-serif;
+    --font-estedad: "Estedad", sans-serif;
 }
 
 @keyframes hero-fade-up {
